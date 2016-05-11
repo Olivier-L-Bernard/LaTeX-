@@ -1,0 +1,127 @@
+# LaTeX-
+
+\documentclass[twoside,letterpaper,12pt]{article}
+\usepackage{physiqueUDSLatex}
+
+\begin{document}
+
+\begin{center}
+{\large \textbf{Prénom Nom}}\\
+\Telefon \, Téléphone : Numeros Domicile\\
+\Mobilefone \, Cellulaire : Numeros Mobile\\
+\Letter \, Courriel : Électronique\\
+Adresse complète , Code Postale\\
+Ville (Province)\\
+\end{center}
+
+\bigbreak
+
+\begin{flushleft}
+
+\bigbreak
+
+{\large \textbf{\hilight{Formation}}}\\
+
+\bigbreak 
+
+\textbf{Langue}(Langue 1 x/x, langue 2 x/x, etc.)\\ Si billingue mentionné puis spécifier les langues
+
+\bigbreak
+
+\textbf{Diplôme (ex.: Baccalauréat en physique)} \hfill Date de début\\
+Établissement (Ex.:Université de Sherbrooke) \hfill Date de fin \\
+\begin{itemize}[label=\textbullet, font=  \scriptsize]
+    \item (optionnel) Cours inclus dans le programme qui est pertinant de préciser
+\end{itemize}
+
+\bigbreak
+
+\textbf{Nom de  certification (Ex.: Certification de premiers soins)} \hfill Date d'obtention \\
+Nom spécifique (si nécessaire)(ex.: cours de RCR) \\
+Établissement (ex.:Cégep de Sherbrooke)\\
+\begin{itemize}[label=\textbullet, font=  \scriptsize]
+    \item (optionnel) Cours/formation plus spécifique dans la formation qui est pertinant de préciser\\
+\end{itemize}
+
+\bigbreak
+
+{\large \textbf{\hilight{Acquisitions}}}
+
+\bigbreak
+
+Paragraphe de vos acquis les plus important!
+
+\bigbreak
+
+{\large \textbf{\hilight{Expérience de travail}}}
+
+\bigbreak
+
+\textbf{Nom/titre de l'emploie 1} \hfill  Date début\\
+Nom entreprise, Ville ou elle se situe \hfill Date fin \\
+
+\smallbreak
+
+\underline{Tâches}\\
+
+\begin{itemize}[label=\textbullet, font=  \scriptsize]
+    \item liste des tâche principales\\
+    \item tache1\\
+    \item tache2\\
+    \item etc
+\end{itemize}
+
+\textbf{Nom/titre de l'emploi 2} \hfill Date début\\
+Nom entreprise, Ville ou elle se situe \hfill Date fin\\
+
+\bigbreak
+
+\underline{Tâches}\\
+\begin{itemize}[label=\textbullet, font=  \scriptsize]
+    \item voir emploi 1 pour plus de détails
+\end{itemize}
+
+\bigbreak
+
+{\large \textbf{\hilight{Implications}}}
+
+\bigbreak
+
+\textbf{Nom/Titre de l'évènement} \hfill Date (de début s'il y a lieu!)\\
+Lieu ou se déroule l'évènement \hfill (Date de fin s'il y a lieu!)\\
+\begin{itemize}[label=\textbullet, font=  \scriptsize]
+    \item tâche(s) (liste si besoin)
+    
+\end{itemize}
+
+\bigbreak 
+
+{\large \textbf{\hilight{Qualités personnelles et professionnelles}}}
+
+\bigbreak
+
+\begin{itemize}[label=\textbullet, font=  \scriptsize]
+    \item Nommer au plus 3 qualités qui vous font resortirent du lot!
+\end{itemize}
+
+\bigbreak
+
+{\large \textbf{\hilight{Loisirs}}}
+
+\smallbreak
+
+\begin{itemize}[label=\textbullet, font=  \scriptsize]
+    \item Non nécessaire mais mettre des loisirs qui vont de paire avec le lieu où se situe l'entreprise (liste de 3 loisirs au plus!)
+\end{itemize}
+
+\bigbreak
+
+{\large \textbf{\hilight{Références}}}
+\smallbreak
+
+Fournies sur demandes
+
+\end{flushleft}
+
+\end{document}
+
