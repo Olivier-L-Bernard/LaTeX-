@@ -1,0 +1,64 @@
+\documentclass[twoside,letterpaper,11pt]{article}
+
+\usepackage{biblio}
+
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyhead[C]{Devoir NO: COURS} 
+\fancyhead[L]{U de S}
+\fancyhead[R]{CODE DU COURS}
+
+\fancyfoot[C]{} 
+\fancyfoot[L]{}
+\fancyfoot[R]{\textbf{page} \thepage}
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+
+\AddThinSpaceBeforeFootnotes
+\FrenchFootnotes
+
+\newenvironment{rcases}
+  {\left.\begin{aligned}}
+  {\end{aligned}\right\rbrace}
+
+
+\begin{document}
+
+
+\flushleft
+
+\fbox{ \begin{minipage}{20em}
+NOM 1 \hfill JJ/MM/AA\\
+NOM 2
+\end{minipage}}
+
+\bigbreak
+
+\section*{Question 1}
+
+Nous cherchons la longueur d'onde à laquelle un corps noir à une température de $T=6000K$ émet le plus de radiation par unité de longueur d'onde.
+
+\section*{Question 2}
+
+De la lumière monochromatique est incidente sur une surface de sodium. On trouve un potentiel d'arrêt de $V_0=1.85 V$ pour $\lambda=3000$ \AA, et de  $V_0=0.82 V$ pour $\lambda=4000$ \AA. À partir de ces données, nous cherchons à déterminer les informations suivantes:\\
+%insérer le symbole de angstrom
+
+(a) la valeur de la constant de Plank;
+
+(b) le travail de sortie $W_0$ du sodium;
+
+(c) la longueur d'onde de coupure $\lambda_0$ du sodium;
+
+\section*{Question 3}
+
+Nous voulons montrer que: 
+
+(a) La vitesse de phase de l'onde de de Broglie d'un électron relativiste est plus grand que la vitesse de la lumière, $c$.
+
+(b) La vitesse de groupe est la vitesse matérielle.
+
+(c) La vitesse de groupe multipliée par la vitesse de phase est égale à $c^2$.
+
+\end{document}
