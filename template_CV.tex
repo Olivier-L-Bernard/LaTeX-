@@ -1,17 +1,31 @@
 # LaTeX-
 
-\documentclass[twoside,letterpaper,12pt]{article}
+\documentclass[twoside,letterpaper,11  pt]{article}
 \usepackage{biblio}
+
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\bfseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+% Other possible font commands include:
+% \ttfamily for teletype,
+% \sffamily for sans serif,
+% \bfseries for bold,
+% \scshape for small caps,
+% \normalsize, \large, \Large, \LARGE sizes.
+
 
 \begin{document}
 
-\begin{center}
-{\large \textbf{Prénom Nom}}\\
-\Telefon \, Téléphone : Numeros Domicile\\
-\Mobilefone \, Cellulaire : Numeros Mobile\\
-\Letter \, Courriel : Électronique\\
-Adresse complète , Code Postale\\
-Ville (Province)\\
+
+\begin{center} %Paragraphe qui donne les informations de bases
+{\large \textbf{PRENOM ET NOM }}\\
+\Telefon \, Téléphone : NO DE TELEPHONE A DOMICILE \\
+\Mobilefone \, Cellulaire : NO DE CELLULAIRE \\
+\Letter \, Courriel : ADDRESSE COURRIEL \\
+ADRESSE , \\
+VILLE, PROVINCE (ABRÉVIATION) , CODE POSTALE \\
 \end{center}
 
 \bigbreak
@@ -20,103 +34,113 @@ Ville (Province)\\
 
 \bigbreak
 
-{\large \textbf{\hilight{Formation}}}\\
+\section*{Éducation} %Section dans laquelle vous spécifier votre scolarité 
 
-\bigbreak 
+\begin{itemize}[label={}]
 
-\textbf{Langue}(Langue 1 x/x, langue 2 x/x, etc.)\\ Si billingue mentionné puis spécifier les langues
+\item \textbf{NOM DU DIPLOME} (SPÉCIFIER S'IL Y A UNE SPÉCIALISATION ET/OU COOP) \hfill DATE D'OBTENTION OU EN COURS\\
+NOM DE L'ÉTABLISSEMENT  \\
 
-\bigbreak
+\vspace{0.2cm}
 
-\textbf{Diplôme (ex.: Baccalauréat en physique)} \hfill Date de début\\
-Établissement (Ex.:Université de Sherbrooke) \hfill Date de fin \\
-\begin{itemize}[label=\textbullet, font=  \scriptsize]
-    \item (optionnel) Cours inclus dans le programme qui est pertinant de préciser
+\item \textbf{NOM DU DIPLOME} \hfill  DATE D'OBTENTION OU EN COURS \\
+PROGRAMME (SPÉCIFIER S'IL Y A UNE SPÉCIALISATION ET/OU COOP) \\
+NOM DE L'ÉTABLISSEMENT \\
 \end{itemize}
 
-\bigbreak
+\section*{Projet} %Section ou vous mentionner les projets que vous avez fait (ou auquels vous avez participés) avec vos resposenbilité
 
-\textbf{Nom de  certification (Ex.: Certification de premiers soins)} \hfill Date d'obtention \\
-Nom spécifique (si nécessaire)(ex.: cours de RCR) \\
-Établissement (ex.:Cégep de Sherbrooke)\\
+\subsection*{TITRE DU PROJET}
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
-    \item (optionnel) Cours/formation plus spécifique dans la formation qui est pertinant de préciser\\
+    \item RESPONSABILITÉ
+    \item RESPONSABILITÉ
+    \item RESPONSABILITÉ
 \end{itemize}
 
-\bigbreak
+\subsection*{TITRE DU PROJET}
+\begin{itemize}[label=\textbullet, font=  \scriptsize]
+    \item RESPONSABILITÉ
+    \item RESPONSABILITÉ
+    \item RESPONSABILITÉ
+\end{itemize}
 
-{\large \textbf{\hilight{Acquisitions}}}
+\section*{Compétences complémentaires} %Section ou vous spécifier vos compétences qui vous met en évidence
 
-\bigbreak
+\begin{itemize}[label={}]
 
-Paragraphe de vos acquis les plus important!
+\item \textbf{Langages:} LANGUE 1 (X/5), LANGUE 2 (X/5), LANGUE 3 (EN APPRENTISSAGE)
+\item \textbf{GROUPE DE CHOSE QUE VOUS MAITRISE (PAR EXEMPLE; LOGICIEL DE CONCEPTION):} TRUC MAITRISE, TRUC MAITRISE, TRUC MAITRISE et TRUC MAITRISE
+\item \textbf{GROUPE DE CHOSE QUE VOUS MAITRISE (PAR EXEMPLE; LANGAGE DE PROGRAMMATION):} TRUC MAITRISE , TRUC MAITRISE  et TRUC MAITRISE
+\end{itemize}
 
-\bigbreak
+\clearpage
 
-{\large \textbf{\hilight{Expérience de travail}}}
+\section*{Expérience professionnel}%Section ou vous entrer vos expériences de travail
 
-\bigbreak
-
-\textbf{Nom/titre de l'emploie 1} \hfill  Date début\\
-Nom entreprise, Ville ou elle se situe \hfill Date fin \\
+\begin{itemize}[label={}]
+\item \textbf{TITRE DE VOTRE POSTE} \hfill   DATE DE DEBUT\\
+NOM DE LENTREPRISE, VILLE \hfill DATE DE FIN\\
 
 \smallbreak
 
-\underline{Tâches}\\
-
+\underline{Tâches}\\ %Section ou vous entrez des taches que vous aviez
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
-    \item liste des tâche principales\\
-    \item tache1\\
-    \item tache2\\
-    \item etc
+    \item TACHE
+    \item TACHE
+    \item TACHE
 \end{itemize}
 
-\textbf{Nom/titre de l'emploi 2} \hfill Date début\\
-Nom entreprise, Ville ou elle se situe \hfill Date fin\\
 
-\bigbreak
+\item \textbf{TITRE DE VOTRE POSTE} \hfill  DATE DE DEBUT\\
+NOM DE LENTREPRISE, VILLE \hfill DATE DE FIN\\
 
-\underline{Tâches}\\
+\smallbreak
+\underline{Tâches}\\ %Section ou vous entrez des taches que vous aviez
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
-    \item voir emploi 1 pour plus de détails
+    \item TACHE
+    \item TACHE
+    \item TACHE
 \end{itemize}
 
+\end{itemize}
+
+
 \bigbreak
 
-{\large \textbf{\hilight{Implications}}}
+\section*{Implications} %Section ou vous entrez vos implication sociale, bénévoles, etc.
 
 \bigbreak
-
-\textbf{Nom/Titre de l'évènement} \hfill Date (de début s'il y a lieu!)\\
-Lieu ou se déroule l'évènement \hfill (Date de fin s'il y a lieu!)\\
+\begin{itemize}[label={}]
+\item \textbf{CE QUE VOUS FAISIEZ} \hfill DATE DEBUT\\
+ENDROIT OU INSTITUT \hfill DATE FIN\\
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
-    \item tâche(s) (liste si besoin)
-    
+    \item TACHE
+    \item TACHE
 \end{itemize}
 
 \bigbreak 
 
-{\large \textbf{\hilight{Qualités personnelles et professionnelles}}}
-
-\bigbreak
-
+\item \textbf{CE QUE VOUS FAISIEZ} \hfill DATE DEBUT\\
+ENDROIT OU INSTITUT \hfill DATE FIN\\
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
-    \item Nommer au plus 3 qualités qui vous font resortirent du lot!
+    \item TACHE
+    \item TACHE
 \end{itemize}
 
-\bigbreak
+\end{itemize}
 
-{\large \textbf{\hilight{Loisirs}}}
+
+\section*{Intérêts et loisirs}% Section ou vous entrez au plus 3 loisirs et/ou intérêts
 
 \smallbreak
 
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
-    \item Non nécessaire mais mettre des loisirs qui vont de paire avec le lieu où se situe l'entreprise (liste de 3 loisirs au plus!)
+    \item INTERET/LOISIR
+    \item INTERET/LOISIR 
+    \item INTERET/LOISIR
 \end{itemize}
 
-\bigbreak
-
-{\large \textbf{\hilight{Références}}}
+\section*{Références}
 \smallbreak
 
 Fournies sur demandes
@@ -124,4 +148,3 @@ Fournies sur demandes
 \end{flushleft}
 
 \end{document}
-
