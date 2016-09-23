@@ -3,6 +3,13 @@
 
 \usepackage{fancyhdr} %pour les en_tetes et bas_de_pages
 
+\fancypagestyle{firststyle} %pnouvelle commande pour modifier en-tête d'une page (spécifié avec \thispagestyle{firststyle})
+{
+   \renewcommand{\headrulewidth}{0pt}
+   \fancyhf{}
+   \fancyfoot[C]{\thepage}
+}
+
 \usepackage{enumitem} %pour les liste à puces
 
 \usepackage{soul} %Permet de surligner du texte
