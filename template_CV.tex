@@ -14,13 +14,15 @@
 % \bfseries for bold,
 % \scshape for small caps,
 % \normalsize, \large, \Large, \LARGE sizes.
-
+\usepackage{titlesec}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\scshape}{\thesection}{1em}{}[{\titlerule[0.25pt]}]
 
 \begin{document}
 
 
 \begin{center} %Paragraphe qui donne les informations de bases
-{\large \textbf{PRENOM ET NOM }}\\
+{\Large \textbf{PRENOM ET NOM }}\\
 \Telefon \, Téléphone : NO DE TELEPHONE A DOMICILE \\
 \Mobilefone \, Cellulaire : NO DE CELLULAIRE \\
 \Letter \, Courriel : ADDRESSE COURRIEL \\
