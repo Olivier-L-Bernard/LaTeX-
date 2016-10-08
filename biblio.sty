@@ -1,15 +1,18 @@
 \usepackage[T1]{fontenc}      % un second package
-\usepackage[top=2cm, bottom=2cm, left=2cm,right=2cm]{geometry}		%pour les marges
+\usepackage[top=2cm, bottom=2.5cm, left=2cm,right=2cm]{geometry}		%pour les marges
 
 \usepackage{fancyhdr} %pour les en_tetes et bas_de_pages
 
 \usepackage{float}
 
+\usepackage{cancel}
+\usepackage{physics}
+
 \fancypagestyle{firststyle} %pnouvelle commande pour modifier en-tête d'une page (spécifié avec \thispagestyle{firststyle})
 {
    \renewcommand{\headrulewidth}{0pt}
    \fancyhf{}
-   \fancyfoot[C]{\textbf{\thepage}}
+   \fancyfoot[C]{\thepage}
 }
 
 
@@ -31,7 +34,6 @@
 %\FrenchFootnotes %notes
 
 \usepackage{enumitem} %pour les liste à puces
-
 \renewcommand{\labelenumii}{\theenumii}
 \renewcommand{\theenumii}{\theenumi.\arabic{enumii}.} %pour les liste a puce et autres
 
@@ -40,7 +42,7 @@
 \usepackage{mathrsfs} %Le symbole de Lagrange
 
 
-%\usepackage{wasysym}
+
 \usepackage{marvosym} %symbole de téléphone et autres
 
 \usepackage{color}
@@ -66,43 +68,43 @@
 \usepackage{graphicx}
 
 %Truc pour faire des pages titres de bad ass parceque je suis un bad ass parce que c'est super bad ass
-\newcommand*{\titre}[1]{\def\LeTitre{#1}}
+%\newcommand*{\titre}[1]{\def\LeTitre{#1}}
 %\newcommand*{\sousTitre}[1]{\def\LeSousTitre{#1}}
 %\newcommand*{\titreDuCours}[1]{\def\LeTitreDuCours{#1}}
 %\newcommand*{\coteDuCours}[1]{\def\LaCoteDuCours{#1}}
-\newcommand*{\auteurs}[1]{\def\NomDesAuteurs{#1}}
-\renewcommand*{\date}[1]{\def\LaDate{#1}}
-\newcommand\pageTitre{
-    \thispagestyle{empty}
-    \begin{titlepage}
-       \begin{center}      %Le tout sera centré
-      %{\Large \LeTitreDuCours\\}
-      %{\large \LaCoteDuCours\par}
-      \vfill
-      {\huge \bf \LeTitre\\}
-      %{\LARGE \bf \underline \LeSousTitre}
-      \vfill
-      {\LARGE Par \par}
-      \bigskip{}
-      {\large \NomDesAuteurs \par}
-      \vfill
-      {\Large Faculté des sciences \\ Département de physique}
-      \vfill
-      {\large \LaDate \\}
-      {\large Université de Sherbrooke}
+%\newcommand*{\auteurs}[1]{\def\NomDesAuteurs{#1}}
+%\renewcommand*{\date}[1]{\def\LaDate{#1}}
+%\newcommand\pageTitre{
+%    \thispagestyle{empty}
+%    \begin{titlepage}
+%       \begin{center}      %Le tout sera centré
+%      {\Large \LeTitreDuCours\\}
+%      {\large \LaCoteDuCours\par}
+%      \vfill
+%      {\huge \bf \LeTitre\\}
+%      %{\LARGE \bf \underline \LeSousTitre}
+%      \vfill
+%      {\LARGE Par \par}
+%      \bigskip{}
+%      {\large \NomDesAuteurs \par}
+%      \vfill
+%      {\Large Faculté des sciences \\ Département de physique}
+%      \vfill
+%      {\large \LaDate \\}
+%      {\large Université de Sherbrooke}
       %imprime les information \vfill permet d'équilibrer l'espacement vertical
-        \end{center}
-  \end{titlepage}
+%        \end{center}
+%  \end{titlepage}
   %Libère les nom de fonction
-  \global\let\titre\relax
-  \global\let\pageTitre\relax
-  \global\let\sousTitre\relax
-  \global\let\titreDuCours\relax
-  \global\let\coteDucours\relax
-  \global\let\auteurs\relax
-  \global\let\date\relax
-  \cleardoublepage %oblige latex à 1. placer tout ce qu'il y a plus haut 2. à faire qu'en mode recto verso la page suivante soit à droite {superbe}
-}
+%  \global\let\titre\relax
+%  \global\let\pageTitre\relax
+%  \global\let\sousTitre\relax
+%  \global\let\titreDuCours\relax
+ % \global\let\coteDucours\relax
+ %\global\let\auteurs\relax
+%  \global\let\date\relax
+%  \cleardoublepage %oblige latex à 1. placer tout ce qu'il y a plus haut 2. à faire qu'en mode recto verso la page suivante soit à droite {superbe}
+%}
 
 %Commandes page titre:
 %\titre  {Introduction \LaTeX}
@@ -134,7 +136,7 @@
 
 
 \newcounter{pythoncode}							%Cré un nouveau compteur pour les blocs de pythoncode (ajouter [section] pour permettre de reset le compteur à toutes les sections
-\newtcblisting{pythoncode}[2][]{			%Permet de placer du code dans le texte pis que ce sois beau
+\newtcblisting{pythoncode}[2]{			%Permet de placer du code dans le texte pis que ce sois beau
 	phantom={\stepcounter{pythoncode}},				%"phantom" execute un segmant de code. "\stepcounter" permet d'incrémenter le compteur
 	enhanced,							%Permet de faire des choses plus cool
 	breakable,
