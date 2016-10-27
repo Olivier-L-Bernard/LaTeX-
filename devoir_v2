@@ -5,17 +5,15 @@
 \pagestyle{fancy}
 
 \renewcommand{\headrulewidth}{0.5pt}
-\fancyhead[C]{Devoir NO: COURS} 
-\fancyhead[L]{ U de S} 
-\fancyhead[R]{CODE DU COURS}
+\fancyhead[C]{Devoir \NoDev: \LeTitreDuCours} 
+\fancyhead[L]{U de S} 
+\fancyhead[R]{\CoteDuCours}
 
 \renewcommand{\footrulewidth}{0.5pt}
-\fancyfoot[C]{\textbf{page} \thepage} 
+\fancyfoot[C]{\textbf{page \thepage}} 
 \fancyfoot[L]{\rightmark }  %Marque automatiquement la sous-section qui commence la page
 \fancyfoot[R]{\leftmark} %Imprime le titre de la section qui commence la page et \thesection %Marque le numéros de la section actuel
 
-\renewcommand{\labelenumii}{\theenumii}
-\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
 
 \AddThinSpaceBeforeFootnotes
 \FrenchFootnotes
@@ -24,23 +22,17 @@
   {\left.\begin{aligned}}
   {\end{aligned}\right\rbrace}
 
+\def\headline#1{\hbox to \hsize{\hrulefill\quad\lower.3em\hbox{#1}\quad\hrulefill}}
+
 
 \begin{document}
-\thispagestyle{firststyle}
 
-\flushleft
-
-\begin{minipage}{17cm}
-{\Large NOM 1} \hfill {\Large JJ/MM/AA} \\
-{\Large NOM 2}
-\end{minipage}
-
-\vspace{1cm}
-\headline{\textbf{{\Large DEVOIR NO}}}
-\vspace{1cm}
-
-\bigbreak
-
+\redacteur{Nom 1}{Nom 2}{JJ/MM/AA}
+\coteCours{CODE DU COURS}
+\titreDuCours{CODE DU COURS}
+\nodev{NO DU DEVOIR}
+\entete
 
 
 \end{document}
+
