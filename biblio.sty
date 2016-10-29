@@ -109,18 +109,20 @@
 %\entete
 
 %Truc pour faire des pages titres de bad ass parceque je suis un bad ass parce que c'est super bad ass
+
 \newcommand*{\titre}[1]{\def\LeTitre{#1}}
 \newcommand*{\sousTitre}[1]{\def\LeSousTitre{#1}}
 \newcommand*{\titreDuCours}[1]{\def\LeTitreDuCours{#1}}
-%\newcommand*{\coteDuCours}[1]{\def\LaCoteDuCours{#1}}
+\newcommand*{\coteDuCours}[1]{\def\LaCoteDuCours{#1}}
 \newcommand*{\auteurs}[1]{\def\NomDesAuteurs{#1}}
+\newcommand*{\correcteur}[1]{\def\correcteur{#1}}
 \renewcommand*{\date}[1]{\def\LaDate{#1}}
 \newcommand\pageTitre{
     \thispagestyle{empty}
     \begin{titlepage}
-       \begin{center}      %Le tout sera centré
-      %{\Large \LeTitreDuCours\\}
-      %{\large \LaCoteDuCours\par}
+      \begin{center}      %Le tout sera centré
+      {\Large \LeTitreDuCours\\}
+      {\large \LaCoteDuCours\par}
       \vfill
       {\huge \bf \LeTitre\\}
       \vspace{2mm}
@@ -130,12 +132,16 @@
       \bigskip{}
       {\large \NomDesAuteurs \par}
       \vfill
+      {\LARGE Présenté à \par}
+      \bigskip{}
+      {\large \correcteur \par}
+      \vfill
       {\Large Faculté des sciences \\ Département de physique}
       \vfill
       {\large \LaDate \\}
       {\large Université de Sherbrooke}
       %imprime les information \vfill permet d'équilibrer l'espacement vertical
-        \end{center}
+      \end{center}
   \end{titlepage}
   %Libère les nom de fonction
   \global\let\titre\relax
@@ -155,6 +161,7 @@
 %\titreDuCours{}
 %\coteDuCours{}
 %\auteurs{Olivier Bernard}
+%\correcteur{Quelqu'un}
 %\date{\today} 
 %\pageTitre %Place la page titre
 
