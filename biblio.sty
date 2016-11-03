@@ -10,6 +10,10 @@
 
 \usepackage{cancel}
 \usepackage{physics}
+\usepackage[per-mode=symbol]{siunitx}
+%\SI{Nombre}{Unité}
+% \per donne fraction \
+% enombre donne x 10^{nombre}
 
 \usepackage{enumitem} %pour les liste à puces
 
@@ -45,8 +49,6 @@
 %Permet d'insérer des boutes en format paysage
 \usepackage{pdflscape}
 
-\usepackage{pdfpages}
-
 %Couleur personnalisées 
 \usepackage{xcolor}				%permet de créer des couleurs personnalisés
 \definecolor{bleu}{RGB}{184,212,222}		
@@ -57,7 +59,7 @@
 %Pour insérer du code pis que ce soit beau
 \usepackage[most]{tcolorbox}
 
-\def\headline#1{\hbox to \hsize{\hrulefill\quad\lower.3em\hbox{#1}\quad\hrulefill}} %Permet de faire des lignes tronqué au centre
+\def\headline#1{\hbox to \hsize{\hline{3cm}\quad\lower.3em\hbox{#1}\quad\hrulefill}} %Permet de faire des lignes tronqué au centre
 
 \fancypagestyle{firststyle} %pnouvelle commande pour modifier en-tête d'une page (spécifié avec \thispagestyle{firststyle})
 {
@@ -67,7 +69,7 @@
 }
 
 
-\fancypagestyle{firststyle2} %pnouvelle commande pour modifier en-tête d'une page (spécifié avec \thispagestyle{firststyle2})
+\fancypagestyle{firststyle2} %nouvelle commande pour modifier en-tête d'une page (spécifié avec \thispagestyle{firststyle2})
 {
    \renewcommand{\headrulewidth}{0pt}
    \renewcommand{\footrulewidth}{0pt}
@@ -98,7 +100,7 @@
     {\large \CoteDuCours}
     \end{minipage}
     
-    \vspace{1cm}
+    \vspace{0.5cm}
     \headline{\textbf{{\Large DEVOIR \NoDev}}}
     \vspace{1cm}
 }
@@ -111,20 +113,18 @@
 %\entete
 
 %Truc pour faire des pages titres de bad ass parceque je suis un bad ass parce que c'est super bad ass
-
 \newcommand*{\titre}[1]{\def\LeTitre{#1}}
 \newcommand*{\sousTitre}[1]{\def\LeSousTitre{#1}}
 \newcommand*{\titreDuCours}[1]{\def\LeTitreDuCours{#1}}
-\newcommand*{\coteDuCours}[1]{\def\LaCoteDuCours{#1}}
+%\newcommand*{\coteDuCours}[1]{\def\LaCoteDuCours{#1}}
 \newcommand*{\auteurs}[1]{\def\NomDesAuteurs{#1}}
-\newcommand*{\correcteur}[1]{\def\correcteur{#1}}
 \renewcommand*{\date}[1]{\def\LaDate{#1}}
 \newcommand\pageTitre{
     \thispagestyle{empty}
     \begin{titlepage}
-      \begin{center}      %Le tout sera centré
-      {\Large \LeTitreDuCours\\}
-      {\large \LaCoteDuCours\par}
+       \begin{center}      %Le tout sera centré
+      %{\Large \LeTitreDuCours\\}
+      %{\large \LaCoteDuCours\par}
       \vfill
       {\huge \bf \LeTitre\\}
       \vspace{2mm}
@@ -134,16 +134,12 @@
       \bigskip{}
       {\large \NomDesAuteurs \par}
       \vfill
-      {\LARGE Présenté à \par}
-      \bigskip{}
-      {\large \correcteur \par}
-      \vfill
       {\Large Faculté des sciences \\ Département de physique}
       \vfill
       {\large \LaDate \\}
       {\large Université de Sherbrooke}
       %imprime les information \vfill permet d'équilibrer l'espacement vertical
-      \end{center}
+        \end{center}
   \end{titlepage}
   %Libère les nom de fonction
   \global\let\titre\relax
@@ -163,7 +159,6 @@
 %\titreDuCours{}
 %\coteDuCours{}
 %\auteurs{Olivier Bernard}
-%\correcteur{Quelqu'un}
 %\date{\today} 
 %\pageTitre %Place la page titre
 
