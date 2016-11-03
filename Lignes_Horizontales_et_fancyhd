@@ -1,0 +1,96 @@
+\documentclass[twoside,letterpaper,11pt]{article}
+\usepackage[T1]{fontenc}      % un second package
+\usepackage[utf8]{inputenc}
+\usepackage[top=2cm, bottom=2cm, left=2cm,right=2cm]{geometry}
+\usepackage[utf8]{inputenc} % latin1        % Suppport de Latex pour les accents
+\usepackage[french]{babel}  
+
+
+
+%Pour les en-tête et pied-de page
+\usepackage{fancyhdr} %pour les en_tetes et bas_de_pages
+
+%Besoin pour faire mes pieds de page (et en-tête :P)
+\pagestyle{fancy}
+
+%Commandes pour les beaux en-têtes
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyhead[C]{ \NoDev: \LeTitreDuCours} 
+\fancyhead[L]{ U de S} 
+\fancyhead[R]{\CoteDuCours}
+
+\renewcommand{\footrulewidth}{0.5pt}
+\fancyfoot[C]{\textbf{page \thepage}} 
+\fancyfoot[LO]{Gauche lorsque impaire }  
+\fancyfoot[LE]{Gauche lorsque paire }
+\fancyfoot[RO]{droite lorsque impaire} 
+\fancyfoot[RE]{droite lorsque paire}
+
+\fancypagestyle{firststyle} %nouvelle commande pour modifier en-tête d'une page (spécifié avec \thispagestyle{firststyle})
+{
+   \renewcommand{\headrulewidth}{0pt}
+   \fancyhf{}
+   \fancyfoot[C]{\thepage}
+}
+
+
+%Pour faire un titre de document centré
+\def\headline#1{\hbox to \hsize{\hrulefill\quad\lower.3em\hbox{#1}\quad\hrulefill}}
+
+
+%Pour faire des lignes horizontale centré sur le texte (fancy)
+\newcommand*{\longueurligne}[1]{\def\LongueurLigne{#1 cm}}
+
+\newcommand*{\titretravail}[1]{\def\TITRE{#1}}
+\newcommand\ligneH{
+\hbox to \hsize{\rule{\LongueurLigne}{.05em}\quad\lower.3em\hbox{\TITRE}\quad\hrulefill} %Permet de faire des lignes tronqué au centre
+}
+
+%Commande pour faire le texte avec 2 lignes avec une dimension contrôlé
+%\longueurligne{3}
+%\titretravail{ALLO}
+%\ligneH
+
+
+%Faire un en-tête de travail et non de page!
+\newcommand*{\titreDuCours}[1]{\def\LeTitreDuCours{#1}}
+\newcommand*{\redacteur}[3]{\def\Nomredacteur{#1  \hfill #3 \\ #2}}
+\newcommand*{\coteCours}[1]{\def\CoteDuCours{#1}}
+\newcommand*{\NomWork}[1]{\def\NoDev{#1}}
+\newcommand\entete{
+    \thispagestyle{firststyle}
+    \flushleft
+    \begin{minipage}{17cm}
+    {\Large \Nomredacteur \par} 
+    \vspace{2mm}
+    {\large \CoteDuCours}
+    \end{minipage}
+    
+    \vspace{1cm}
+    \headline{\textbf{{\Large \MakeUppercase{\NoDev}}}}
+    \vspace{1cm}
+}
+
+\begin{document}
+
+
+%Commande pour faire une en-tête
+\redacteur{NOM1}{NOM2}{28/10/16}
+\coteCours{CODE DU COURS}
+\titreDuCours{NOM DU COURS}
+\NomWork{Titre super beau}
+\entete
+
+\clearpage
+
+\longueurligne{1}
+\titretravail{Longueur dite <<contrôlé>>}
+\ligneH
+
+\clearpage
+
+\longueurligne{5}
+\titretravail{Second exemple}
+\ligneH
+
+\end{document}
