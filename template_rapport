@@ -22,12 +22,12 @@
 
 \pagenumbering{roman}
 
-\titre{Rapport de laboratoire}
-\sousTitre{Effet photoélectrique}
-\titreDuCours{Travaux pratiques II}
-\coteDuCours{PHQ360}
-\auteurs{Olivier Bernard \\ Étienne Massé \\ Samuel Desrosiers}
-\correcteur{Marie-Ève Boulanger}
+\titre{RAPPORT DE LABORATOIRE}
+\sousTitre{NOM DU LABORATOIRE}
+\titreDuCours{NOM DU COURS}
+\coteDuCours{CODE DU COURS}
+\auteurs{NOM1 \\ NOM2 \\ NOM3}
+\correcteur{CORRECTEUR}
 \date{\today} 
 \pageTitre %Place la page titre
 
@@ -49,31 +49,31 @@
 
 \section{Montage expérimental}
 
-\subsection{Lame quart d'onde} 
+\subsection{MONTAGE 1} 
 
-\subsection{Polarisation et angle de Brewster}
+\subsection{MONTAGE 2}
  
-\subsection{Optique de Fourrier}
+\subsection{MONTAGE 3}
 
 \clearpage  
 
 \section{Résultats}
 
-\subsection{Lame quart d'onde} 
+\subsection{RÉSULTATS 1} 
 
-\subsection{Polarisation et angle de Brewster}
+\subsection{RÉSULTATS 2}
  
-\subsection{Optique de Fourrier}
+\subsection{RÉSULTATS 3}
 
 \clearpage 
 
 \section{Analyse des résultats}
 
-\subsection{Lame quart d'onde} 
+\subsection{RÉSULTATS 1} 
 
-\subsection{Polarisation et angle de Brewster}
+\subsection{RÉSULTATS 2}
  
-\subsection{Optique de Fourrier}
+\subsection{RÉSULTATS 3}
 
 \clearpage 
 
@@ -90,19 +90,13 @@
 
 \subsection{Image}
 
-%\begin{figure}[ht]
-%\centering
-%        \includegraphics[width=120mm]{lnIntensite_Lampe.png}
-%        \caption{ln en fonction de la tensions}
-%        \label{LAMPElnInt2_brute}
-%\end{figure}
-
-
 
 \clearpage
 
 \subsection{Références}
 
+%FORME: INITIALE_PRÉNOM. NOM_FAMILLE, ITALIQUE{NOM DU DOCUMENT}, édition de MOIS ANNÉE, OÙ L'ÉDITION S'EST FAIT, SECTION DU LIVRE.
+%EXEMPLE:
 \begin{enumerate}[label=\lbrack \arabic* \rbrack]
 \item R. CÔTÉ, \textit{Mécanique Quantique I: Notes de cours}, édition de septembre 2015, Département de physique de l'Université de Sherbrooke, Chapitre 1.
 \item G.BERNIER, \textit{Protocole de laboratoire: Effet photoélectrique}, Université de Sherbrooke.
@@ -110,4 +104,3 @@
 
 
 \end{document}
-
