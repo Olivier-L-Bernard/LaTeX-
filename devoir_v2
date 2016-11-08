@@ -10,7 +10,7 @@
 \fancyhead[R]{\CoteDuCours}
 
 \renewcommand{\footrulewidth}{0.5pt}
-\fancyfoot[C]{\textbf{page \thepage}} 
+\fancyfoot[C]{\textbf{\thepage}} 
 \fancyfoot[L]{\rightmark }  %Marque automatiquement la sous-section qui commence la page
 \fancyfoot[R]{\leftmark} %Imprime le titre de la section qui commence la page et \thesection %Marque le numéros de la section actuel
 
