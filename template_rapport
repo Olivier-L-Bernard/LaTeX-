@@ -41,22 +41,73 @@
 
 \section{Introduction}
 
-\vspace{15mm}¸
-
 \clearpage
+
+\section{Théorie}
+
+\clearpage 
+
+\section{Montage expérimental}
+
+\subsection{Lame quart d'onde} 
+
+\subsection{Polarisation et angle de Brewster}
+ 
+\subsection{Optique de Fourrier}
+
+\clearpage  
+
+\section{Résultats}
+
+\subsection{Lame quart d'onde} 
+
+\subsection{Polarisation et angle de Brewster}
+ 
+\subsection{Optique de Fourrier}
+
+\clearpage 
+
+\section{Analyse des résultats}
+
+\subsection{Lame quart d'onde} 
+
+\subsection{Polarisation et angle de Brewster}
+ 
+\subsection{Optique de Fourrier}
+
+\clearpage 
+
+\section{Conclusion}
+
+\vspace{5mm}
+
+
+\clearpage 
 
 \pagenumbering{Roman}
 
 \section{Annexes}
 
+\subsection{Image}
+
+%\begin{figure}[ht]
+%\centering
+%        \includegraphics[width=120mm]{lnIntensite_Lampe.png}
+%        \caption{ln en fonction de la tensions}
+%        \label{LAMPElnInt2_brute}
+%\end{figure}
+
+
+
+\clearpage
+
 \subsection{Références}
 
-\vspace{20mm}
-
-\lbrack 1 \rbrack R. CÔTÉ, \textit{Mécanique Quantique I: Notes de cours}, édition de septembre 2015, Département de physique de l'Université de Sherbrooke, Chapitre 1.
-\\
-
-\lbrack 2 \rbrack G.BERNIER, \textit{Protocole de laboratoire: Effet photoélectrique}, Université de Sherbrooke. \\
+\begin{enumerate}[label=\lbrack \arabic* \rbrack]
+\item R. CÔTÉ, \textit{Mécanique Quantique I: Notes de cours}, édition de septembre 2015, Département de physique de l'Université de Sherbrooke, Chapitre 1.
+\item G.BERNIER, \textit{Protocole de laboratoire: Effet photoélectrique}, Université de Sherbrooke.
+\end{enumerate}
 
 
 \end{document}
+
