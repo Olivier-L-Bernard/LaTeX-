@@ -1,0 +1,106 @@
+\documentclass[twoside,letterpaper,12pt]{article}
+\usepackage{biblio}
+%\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{} 
+\fancyhead[L]{} 
+\fancyhead[C]{} 
+
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[LO]{\thepage} 
+\fancyfoot[RE]{\thepage} 
+\fancyfoot[C]{} 
+
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+
+\def\headline#1{\hbox to \hsize{\hrulefill\quad\lower.3em\hbox{#1}\quad\hrulefill}}
+
+\begin{document}
+
+\pagenumbering{roman}
+
+
+\title{\LARGE{TEMPLATE DE RAPPORT}}
+\redigeur{REDIGEUR 1}{REDIGEUR 2}
+\correcteur{CORRECTEUR}
+\information{Faculté des Sciences}{Département de physique}{\today}
+
+\pageTitre
+
+\thispagestyle{firststyle2}
+
+\tableofcontents
+
+\clearpage
+
+\pagenumbering{arabic}
+
+\section{Introduction}
+
+\clearpage
+
+\section{Théorie}
+
+\clearpage 
+
+\section{Montage expérimental}
+
+\subsection{MONTAGE 1} 
+
+\subsection{MONTAGE 2}
+ 
+\subsection{MONTAGE 3}
+
+\clearpage  
+
+\section{Résultats}
+
+\subsection{RÉSULTATS 1} 
+
+\subsection{RÉSULTATS 2}
+ 
+\subsection{RÉSULTATS 3}
+
+\clearpage 
+
+\section{Analyse des résultats}
+
+\subsection{RÉSULTATS 1} 
+
+\subsection{RÉSULTATS 2}
+ 
+\subsection{RÉSULTATS 3}
+
+\clearpage 
+
+\section{Conclusion}
+
+\vspace{5mm}
+
+
+\clearpage 
+
+\pagenumbering{Roman}
+
+\section{Annexes}
+
+\subsection{Image}
+
+
+\clearpage
+
+\subsection{Références}
+
+%FORME: INITIALE_PRÉNOM. NOM_FAMILLE, ITALIQUE{NOM DU DOCUMENT}, édition de MOIS ANNÉE, OÙ L'ÉDITION S'EST FAIT, SECTION DU LIVRE.
+%EXEMPLE:
+\begin{enumerate}[label=\lbrack \arabic* \rbrack]
+\item R. CÔTÉ, \textit{Mécanique Quantique I: Notes de cours}, édition de septembre 2015, Département de physique de l'Université de Sherbrooke, Chapitre 1.
+\item G.BERNIER, \textit{Protocole de laboratoire: Effet photoélectrique}, Université de Sherbrooke.
+\end{enumerate}
+
+
+\end{document}
+
