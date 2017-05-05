@@ -1,0 +1,145 @@
+\documentclass[twoside,letterpaper,12pt]{article}
+\usepackage{biblio_2}
+%\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{\rightmark} 
+\fancyhead[L]{} 
+\fancyhead[C]{} 
+
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[LO]{\thepage} 
+\fancyfoot[LE]{15 030 119}
+\fancyfoot[RE]{\thepage} 
+\fancyfoot[RO]{15 030 119}
+\fancyfoot[C]{Olivier Bernard} 
+
+\enlargethispage{2cm}
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
+
+\def\headline#1{\hbox to \hsize{\hrulefill\quad\lower.3em\hbox{#1}\quad\hrulefill}}
+
+\begin{document}
+
+\pagenumbering{roman}
+
+\title{\LARGE{Stage chez PPD Méditech}}
+\redigeur{Olivier Bernard}
+%\correcteur{lol}
+\information{Faculté des Sciences}{Département de physique}{\today}
+
+
+  
+\pageTitre
+
+\thispagestyle{firststyle2}
+
+\cleardoublepage
+
+\thispagestyle{firststyle}
+
+\tableofcontents
+
+\clearpage
+
+\pagestyle{fancy}
+
+\pagenumbering{arabic}
+
+\section{Organisation: Groupe PPD - Méditech}
+
+\subsection{Survol du groupe PPD} 
+
+Le groupe PPD est un organisme (une entreprise) composé de plusieurs sous divisions. Leur domaine de production s'étend du thermoformage à l'injection de plastique. Les équipes de PPD ont développé une expertise au premier plan du marché de divers domaines tel que le transport, l'agriculture, l'industrie minière, les biens de consommations, les véhicules récréatifs, les équipements industriels et les produits médicaux. Le groupe offre également une grande variété de procédés de transformation du plastique tel que le moulage de polymères (polyuréthane, par injection, compression directe ou PSE). De plus, il offre le moulage de composés de caoutchouc, la fabrication de moule, des solutions de sièges intégrées, moulages et usinages de produits médicaux. Tout ceci se fait dans les installations, des fabrications et production sophistiqué répartient dans divers site (usines).\\ 
+Fondé en 1960 par la famille Morrissette,le groupe PPD propose des solutions révolutionnaires et innovantes qui sont intégrées à partir d'un éventail de produits de polymères et de composés de caoutchouc et ce à titre de sous traitant.\\
+La branche PPD Méditech se concentre sur les produits médicaux pour permettre la réadaptation des personnes qui souffrent de douleurs articulaire avancées (absence de cartilage par exemple).
+    
+\subsection{PPD Méditech}
+
+\subsubsection{Secteur d'intérêt}
+
+Comme mentionné précédemment, PPD Méditech se concentre dans le domaine médicale. PPD Méditech produit autant de produits brutes (barres et cubes) que Méditech vend comme matière première pour l'usinage de pièces pour divers clients, que de pièces usinées qui sont ensuite vendus (directement ou par l'intermédiaire de ses clients) aux hôpitaux pour permettre les opérations des patients qui ont besoin d'articulations artificiels et autres besoins.
+ 
+ \subsubsection{Organisation interne}
+ 
+ L'organisation de Méditech se voit être simple pour maximiser le rendement de l'usine. L'usine est séparée en différentes sections de travail autonome et indépendante les unes des autres. L'usine est principalement séparée entre une section de production de matériel brute, une section d'usinage de pièces médicales et une section d'expédition pour envoyer les grandes quantités de matière première et pièces produites.
+ 
+\clearpage 
+ 
+
+\section{Description du travail accompli}
+
+\subsection{Fonction} 
+Dans le cadre de mon stage chez PPD Méditech, je me suis vu attribuer le titre de  stagiaire en conception et R\&D. Dans le cadre de ce poste, j'ai été chargé de la supervision de plusieurs projets en parallèles. J'ai dû voir à ce que les délais et dates limites soient respectés, ainsi que les budgets donnés. En ajout à tout cela, je devais également assister mon superviseur de stage dans divers projets lorsque nécessaire, en plus de mes tâches attribuées.
+
+\subsection{Environnement et relation}
+
+\subsubsection{Environnement}
+
+Pour mon stage, je me suis vu attribuer un bureau dans la salle de  travail centrale de l'usine. Salle qui est dédiée à la programmation et à la conception chez Méditech. Cette salle à un accès rapide aux secteurs de moulages et d'usinages des pièces. Mon poste de travail était constitué d'un bureau avec une armoire à deux sections ainsi qu'un ordinateur. Puisque je faisais de la conception et de la recherche dans un domaine industriel, je devais utiliser le logiciel 3D de simulation \textit{Solidworks 3D} et d'autres logiciel qui permet la transition entre des \textit{CAD} (modèles 3D) à la génération de code pour la découpe laser et l'usinage de diverses pièces.\\
+Mise à part l'ordinateur, je n'ai pas eu besoin d'utiliser d'autres appareils spécialisés du domaine. Toutefois, j'ai eu besoin de comprendre leurs fonctionnement et leurs utilités pour pouvoir améliorer mes conceptions déjà existante.
+
+\subsubsection{Relations humaines et sociales}
+
+Au courant de mon stage chez PPD Méditech, aux vues de mes responsabilités, je devais avoir plusieurs interactions avec plusieurs membres des équipes des différents secteurs de l'usine, et d'autres personnes qui ne font pas partie d'une des équipes de PPD. Lors de ces discussions et rencontres avec ces personnes, je devais faire preuve de professionnalisme et respecter l'étiquette appropriée à la situation dans laquelle j'étais (réunion d'affaire, réunion de projet, etc).
+ 
+\subsection{Résultats obtenus}
+
+J'ai obtenu une grande diversité de résultats au cours de mes projets (qui se dénombre à plus de 24 au total. Toutefois, je ne mentionnerais seulement les plus importants).\\
+J'ai fais l'amélioration de conception de machine qui permettent la compression des moules à plus de 120 000 livres de pression. Les recettes de moulages de plastiques développées avec les anciennes machines fonctionnent avec les nouvelle modifications développées sans problèmes.\\
+Ensuite, j'ai fait le lancement (et l'amélioration continue) d'étagères sur roue pour un produits spécifique. Ces étagères vont permettre le retrait de la majorité des étagères fixes présentent dans l'usine.Ceci a permis d'avoir un un gain d'espace sur le plancher majeur. \\
+Avec ce gain d'espace, je me suis vue attribuer la responsabilité de refaire l'aménagement de l'usine pour accueillir de nouvelles machines de compression dont j'ai modifié la conception (presse).\\
+En parallèle à cela, j'ai développé des outils de coupe pour des pièces microscopiques (de la taille de quelques millimètres). Ces outils qui ont pour but de faire des détails à l'échelle du millième de pouce (de l'ordre de 0.01mm) ont été en partie une réussite (nous réussissions à faire certaines pièces) et un échec (certaines pièces n'ont pas pu être usinées à l'aide des outils). \\
+Finalement, j'ai lancé l'étude de stress résiduel dans certains produit pour déterminer si oui ou non nos produits sont sujet à subir des contraintes interne. L'expérience n'est pas terminé (nous devions recueillir plus de 4000 données tirées de 24 pièces, chose qui sera terminé le 28 avril 2017). Nous pourrons tirés différentes conclusion des résultats obtenu lorsque ce projet sera terminé.. 
+
+
+\subsection{Problèmes rencontrés et solutions}
+
+Lors de mon stage, j'ai dû faire face à plusieurs problèmes et difficultés. Les plus présents et plus notés sont ceux d'organisations et de communications.  Pour résoudre ces problèmes, j'ai rédigé un document qui est désormais standardisé (appelé BOM pour "Bill of Material" à l'interne) qui permet de faire un suivis facile des pièces et matériel qui entrent ou sortent (au "black oxide", à la trempe ou autres) de l'entreprise. Ce document simple d'utilisation m'a permis de palier à plusieurs problèmes que je n'aurais pas réussi à surmonter seul. \\
+Pour ce qui est de la communication, j'ai appris à mieux communiquer avec les personnes et suivis différents tutoriel de communication pour parler avec les gens.\\
+Ensuite, un autre problème récurrent était celui des géométries de machine et de la  conception. Pour résoudre les différents problèmes auxquelles je devaient faire face, je faisais plusieurs concept test préalablement ainsi que des calcul pour prédire le comportement des pièces de certains concept qui n'étaient pas finalisé.
+
+\clearpage  
+
+\section{Bilan des acquis}
+
+Au courant de mon stage de la session d'hiver 2017, mes différents acquis relèves autant du domaine de la gestion de projets que de la réflexion des conceptions. \\
+Tout d'abord, j'ai dû apprendre à gérer le temps impartit, mais aussi de gérer le temps machine et employés qui était disponible. Je devais gérer les différents besoin des projets dont j'avais la charge.\\
+Ensuite, j'ai acquis des compétences dans la gestion monétaire de budget. Je devais gérer de l'argent et effectuer plusieurs décisions monétaire pour l'achat des différentes composantes des machines conçu ainsi que de la sous traitance effectuée.\\
+Ensuite, j'ai acquis des compétences au niveaux de la conception de machines et de mécanismes. Lors de ces situations j'ai dû apprendre à réfléchir avec de différentes méthodes.
+
+Enfin,au courant de ce stage  j'ai appris à maîtriser et mieux comprendre la physique mécanique et nucléaire derrière les différents procédés de moulages reliés à la modification et préparation des plastiques et pièces de plastiques. 
+
+\subsection{Aspects positifs du stage} 
+
+Lors de ce stage j'ai appris à mieux communiqué avec les gens (autant écris que parlé) et ce qu'était le milieu médicale industriel. \\
+En ajout à cela, j'ai eu l'opportunité de découvrir le monde de l'ingénierie et de la physique médicale, domaine de la science qui m'intéresse le plus. Ce stage m'a confirmé que ce domaine était bien celui dans lequel je suis le plus performant et apte à faire une poussée technologique et scientifique.\\
+En plus, ce stage m'a donné l'opportunité de voir comment était le monde industriel médicale et de me faire des contactes chez divers client situé dans des pays Européen et aux États Unis.
+
+\subsection{Notions scolaire}
+Les notions scolaires utilisés lors de mon stage étaient surtout au niveau de la physique statistique, de la physique mécanique et de la physique nucléaire. \\
+Ce qui attrait à la statistique, j'ai effectué des études de plastiques qui ont requis la rédaction de documents et des calculs de moyenne ainsi que d'écarts types pour définir les caractéristiques d'un matériel.\\
+Pour ce qui attrait à la physique mécanique, j'ai fait la conception de machines et de différents montage (appelé "jig") standard pour faciliter la manipulation et l'usinage de différentes pièces.\\
+Finalement, j'ai dû apprendre le fonctionnement des atomes lors de l'exposition à l'irradiation nucléaire car PPD fait irradier certains de ses produits pour modifier les caractéristiques mécanique du matériel.
+ 
+\subsection{Expériences}
+L'expérience que j'ai tiré de mon stage est divers et très poussé. L'expérience la plus marquante de mon stage fut celle de l'étude du plastique et la conception d'un bloc étalon pour une machine à ultrason. Ce fut les expériences les plus marquantes car j'ai dû réfléchir aux méthodes d'études ainsi qu'un outils d'analyse à la suite de la fabrication des pièces.\\
+Pour l'étude plastique, j'ai dû utiliser une pièce existante que nous avons usinés et en tirer des données pertinentes qui ont pu être utilisé pour indiquer l'apport de stress présent dans nos produit.\\
+Pour le bloc étalon j'ai dû définir une disposition logique de trous dans un bloc de plastique dont la position nous est déjà connu pour permettre un étalonnage efficace de notre machine à ultrason et ce sans qu'il n'y ait de bruit dans nos lecture (erreur de mesure) causé par le rebord du bloc étalon. Ce bruit causé par le bord de la pièce est appelé effet de bord.
+
+\subsection{Compétences développées}
+Lors de mon stage chez PPD Méditech, j'ai développés plusieurs compétences.\\
+J'ai développé des compétences de leadership et de gestion. Ces compétences englobe les compétence mineurs suivantes: savoir apprendre, adaptation aux différentes situations, adoption d'un comportement professionnel, organisation de son travail, communication efficace, et développer et entretenir de bonne relations.\\
+Au cours de mon stage, j'ai du développer un sens de leadership pour mener mes différents projets à termes et ce dans les temps et budgets imparties par nos clients. Pour ce faire, j'ai dû apprendre à mieux assimiler de nouvelles théories ainsi que m'adapter au différentes situations sans avoir trop de difficultés. L'apprentissage de nouvelle théories mon permis d'avoir une meilleur compréhension physique des choses qui se produisent ainsi que d'être plus conscient de phénomènes possibles dans ce domaine. Aussi, la possibilité de m'adapter plus facilement à diverses situation m'a permis d'accélérer le processus de résolution de problèmes car j'ai été capable d'adapter mes processus et procédés aux situations plutôt que de forcer une méthode moins efficace pour régler certains problèmes.\\
+Ensuite, lorsque je dû organiser et animer diverses rencontres, j'ai été capable d'adopter un comportement professionnel et organiser mon travail de sorte à ce que les présentation soient claires, concises et simple pour tout le monde. En ajout, je devais communiquer l'information voulu clairement pour permettre la compréhension facile de mes idées et projets menés à bien. Le développement des compétences cités plus précédemment ont permis l'avancement plus rapide des projets.\\
+Enfin, puisque je devais faire affaire avec différents organismes, je dû apprendre à entretenir de bonnes relations avec les gens. Pour ce faire, j'ai appris à développer mon parler vocale et appris à communiquer de façon plus efficace avec mes collègue. En plus, je m'intéressais à leurs champs d'intérêts pour faciliter le développement de relations entre moi et les personnes avec qui j'ai besoin de faire affaire avec.
+
+%\clearpage 
+
+%\pagenumbering{Roman}
+
+%\section{Annexes}
+ 
+\end{document}
