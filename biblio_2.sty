@@ -1,9 +1,11 @@
+
 \usepackage[T1]{fontenc}      % un second package
 \usepackage[top=2cm, bottom=2cm, left=2cm,right=2cm]{geometry}		%pour les marges
 
 \usepackage{fancyhdr} %pour les en_tetes et bas_de_pages
 
 \usepackage{float}
+\usepackage{newfloat}
 
 \usepackage{ragged2e}
 
@@ -62,6 +64,8 @@
 
 %Pour insérer du code pis que ce soit beau
 \usepackage[most]{tcolorbox}
+
+\DeclareFloatingEnvironment[fileext=lop]{graphique}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 \newcommand{\blap}[1]{\vbox to 0pt{#1\vss}}
@@ -136,7 +140,7 @@
     \enlargethispage{2cm}
  
     \AddToShipoutPicture{
-             \AtUpperLeftCorner{1.5 cm}{2.25cm}{\includegraphics[width=7cm]{logo.png}}
+             %\AtUpperLeftCorner{1.5 cm}{2.25cm}{\includegraphics[width=7cm]{logo.png}}
         \AtUpperRightCorner{1.5cm}{1cm}{\includegraphics[width=4cm]{UdeS.jpg}}
     }
  
@@ -165,6 +169,7 @@
 \end{titlepage}
 \ClearShipoutPicture
 \makeatletter
+\thispagestyle{firststyle2}
 \cleardoublepage %oblige latex à 1. placer tout ce qu'il y a plus haut 2. à faire qu'en mode recto verso la page suivante soit à droite {superbe}
 }
 
