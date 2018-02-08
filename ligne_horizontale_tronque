@@ -71,6 +71,30 @@
     \vspace{1cm}
 }
 
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\sectionrule\Large\bfseries}
+  {\thesection}
+  {1em}
+  {}
+
+\newcommand{\sectionrule}{%
+  % no rule before the first section
+  \ifnum\value{section}=0
+  \else
+    % otherwise, ensure being between paragraphs
+    \par
+    % add some vertical space
+    \addvspace{\bigskipamount}%
+    % the rule realized as leaders, so it disappears at a page break
+    % see also http://tex.stackexchange.com/a/61643/4427
+    \leaders\vrule width \textwidth\vskip0.4pt
+    % some other vertical space
+    \bigskip
+  \fi
+}
+
 \begin{document}
 
 
