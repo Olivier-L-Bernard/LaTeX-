@@ -1,21 +1,17 @@
-
 \usepackage[T1]{fontenc}      % un second package
-\usepackage[top=2cm, bottom=2cm, left=2cm,right=2cm]{geometry}		%pour les marges
+\usepackage[top=2.2cm, bottom=2cm, left=2cm,right=2cm]{geometry}		%pour les marges
 
 \usepackage{fancyhdr} %pour les en_tetes et bas_de_pages
 
 \usepackage{float}
-\usepackage{newfloat}
 
 \usepackage{ragged2e}
-
-\usepackage{eso-pic}
 
 %\AddThinSpaceBeforeFootnotes
 %\FrenchFootnotes %notes
 
 \usepackage{cancel}
-%\usepackage{physics}
+\usepackage{physics}
 \usepackage[per-mode=symbol]{siunitx}
 %\SI{Nombre}{Unité}
 % \per donne fraction \
@@ -65,18 +61,7 @@
 %Pour insérer du code pis que ce soit beau
 \usepackage[most]{tcolorbox}
 
-\DeclareFloatingEnvironment[fileext=lop]{graphique}
-
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-\newcommand{\blap}[1]{\vbox to 0pt{#1\vss}}
-\newcommand\AtUpperLeftCorner[3]{%
-  \put(\LenToUnit{#1},\LenToUnit{\dimexpr\paperheight-#2}){\blap{#3}}%
-}
-\newcommand\AtUpperRightCorner[3]{%
-  \put(\LenToUnit{\dimexpr\paperwidth-#1},\LenToUnit{\dimexpr\paperheight-#2}){\blap{\llap{#3}}}%
-}
-
-\def\headline#1{\hbox to \hsize{\hline{3cm}\quad\lower.3em\hbox{#1}\quad\hrulefill}} %Permet de faire des lignes tronqué au centre
+\def\headline#1{\hbox to \hsize{\hrulefill\quad\lower.3em\hbox{#1}\quad\hrulefill}} %Permet de faire des lignes tronqué au centre
 
 \fancypagestyle{firststyle} %pnouvelle commande pour modifier en-tête d'une page (spécifié avec \thispagestyle{firststyle})
 {
@@ -105,9 +90,10 @@
 
 
 %Faire un en-tête de devoir
-\newcommand*{\redacteur}[3]{\def\Nomredacteur{#1  \hfill #3 \\ #2}}
+\newcommand*{\redacteur}[3]{\def\Nomredacteur{#1 \hfill #3\\ #2}}
 \newcommand*{\coteCours}[1]{\def\CoteDuCours{#1}}
 \newcommand*{\nodev}[1]{\def\NoDev{#1}}
+\newcommand*{\doc}[1]{\def\Doc{#1}}
 \newcommand\entete{
     \thispagestyle{firststyle}
     \flushleft
@@ -117,61 +103,26 @@
     {\large \CoteDuCours}
     \end{minipage}
     
-    \vspace{0.5cm}
-    \headline{\textbf{{\Large DEVOIR \NoDev}}}
+    \vspace{1cm}
+    \headline{\textbf{{\Large \Doc \, \NoDev}}}
     \vspace{1cm}
 }
 
 %Commande pour faire une en-tête
-%\redacteur{NOM1}{NOM2}{28/10/16}
+%\redacteur{NOM1}{NOM2}{JJ/MM/AA}
 %\coteCours{CODE DU COURS}
 %\titreDuCours{NOM DU COURS}
+%\doc{devoir}
 %\nodev{Numéros du devoir}
 %\entete
 
+\newcommand*{\titre}[1]{\def\LeTitre{#1}}
+\newcommand*{\sousTitre}[1]{\def\LeSousTitre{#1}}
+\newcommand*{\titreDuCours}[1]{\def\LeTitreDuCours{#1}}
+%\newcommand*{\coteDuCours}[1]{\def\LaCoteDuCours{#1}}
+\newcommand*{\auteurs}[1]{\def\NomDesAuteurs{#1}}
+\renewcommand*{\date}[1]{\def\LaDate{#1}}
 
-\newcommand*{\redigeur}[2]{\def\redigeur{#1 \\#2}}
-\newcommand*{\correcteur}[1]{\def\correcteur{#1}}
-\newcommand*{\information}[3]{\def\info{#1 \\ #2 \\ \vspace{2cm} #3}}
-\newcommand\pageTitre{
-    \thispagestyle{empty}
-
-\begin{titlepage}
-    \enlargethispage{2cm}
- 
-    \AddToShipoutPicture{
-             %\AtUpperLeftCorner{1.5 cm}{2.25cm}{\includegraphics[width=7cm]{logo.png}}
-        \AtUpperRightCorner{1.5cm}{1cm}{\includegraphics[width=4cm]{UdeS.jpg}}
-    }
- 
-    \begin{center}
-        \vspace*{7cm}
- 
-        \textsc{\@title}
-        \HRule
-        \vspace*{0.5cm}
- 
-        \large{\textsc{\redigeur}} \\
-        \vspace{2.5cm}
-        Présenté à \\
-        \textsc{\correcteur} \\
-        \vspace{1.5cm}
-        \info        
-        
-    \end{center}
- 
-    \vspace*{1cm}
- 
-    \begin{center}
-        \makebox[\textwidth]{\includegraphics[width=\textwidth]{UdeS2.png}}
-    \end{center}
- 
-\end{titlepage}
-\ClearShipoutPicture
-\makeatletter
-\thispagestyle{firststyle2}
-\cleardoublepage %oblige latex à 1. placer tout ce qu'il y a plus haut 2. à faire qu'en mode recto verso la page suivante soit à droite {superbe}
-}
 
 %Commandes page titre après le \begin{document}:
 %\titre  {Introduction \LaTeX}
@@ -179,7 +130,6 @@
 %\titreDuCours{}
 %\coteDuCours{}
 %\auteurs{Olivier Bernard}
-%\correcteur{Marie-Ève Boulanger}
 %\date{\today} 
 %\pageTitre %Place la page titre
 
