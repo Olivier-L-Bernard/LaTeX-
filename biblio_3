@@ -106,9 +106,10 @@
 
 
 %Faire un en-tête de devoir
-\newcommand*{\redacteur}[3]{\def\Nomredacteur{#1  \hfill #3 \\ #2}}
+\newcommand*{\redacteur}[3]{\def\Nomredacteur{#1 \hfill #3\\ #2}}
 \newcommand*{\coteCours}[1]{\def\CoteDuCours{#1}}
 \newcommand*{\nodev}[1]{\def\NoDev{#1}}
+\newcommand*{\doc}[1]{\def\Doc{#1}}
 \newcommand\entete{
     \thispagestyle{firststyle}
     \flushleft
@@ -118,16 +119,16 @@
     {\large \CoteDuCours}
     \end{minipage}
     
-    \vspace{0.5cm}
-    \headline{\textbf{{\Large DEVOIR \NoDev}}}
+    \vspace{1cm}
+    \headline{\textbf{{\Large \Doc \, \NoDev}}}
     \vspace{1cm}
 }
 
-
 %Commande pour faire une en-tête
-%\redacteur{NOM1}{NOM2}{28/10/16}
+%\redacteur{NOM1}{NOM2}{JJ/MM/AA}
 %\coteCours{CODE DU COURS}
 %\titreDuCours{NOM DU COURS}
+%\doc{devoir}
 %\nodev{Numéros du devoir}
 %\entete
 
