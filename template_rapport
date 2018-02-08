@@ -7,10 +7,12 @@
 \fancyhead[L]{} 
 \fancyhead[C]{} 
 
-\renewcommand{\footrulewidth}{0pt}
-\fancyfoot[LO]{\thepage} 
+\renewcommand{\footrulewidth}{0.1pt}
+\fancyfoot[LO]{\thepage}
+\fancyfoot[LE]{Équipe NO}
 \fancyfoot[RE]{\thepage} 
-\fancyfoot[C]{} 
+\fancyfoot[RO]{Équipe NO}
+\fancyfoot[C]{EXPÉRIENCE} 
 
 
 \renewcommand{\labelenumii}{\theenumii}
@@ -22,16 +24,15 @@
 
 \pagenumbering{roman}
 
-\titre{RAPPORT DE LABORATOIRE}
-\sousTitre{NOM DU LABORATOIRE}
-\titreDuCours{NOM DU COURS}
-\coteDuCours{CODE DU COURS}
-\auteurs{NOM1 \\ NOM2 \\ NOM3}
-\correcteur{CORRECTEUR}
-\date{\today} 
-\pageTitre %Place la page titre
 
-\thispagestyle{firststyle}
+\title{\LARGE{TEMPLATE DE RAPPORT}}
+\redigeur{REDIGEUR 1}{REDIGEUR 2}
+\correcteur{CORRECTEUR}
+\information{Faculté des Sciences}{Département de physique}{\today}
+
+\pageTitre
+
+\thispagestyle{firststyle2}
 
 \tableofcontents
 
@@ -45,9 +46,9 @@
 
 \section{Théorie}
 
-\clearpage 
+\clearpage
 
-\section{Montage expérimental}
+\section{Montage expérimental} 
 
 \subsection{MONTAGE 1} 
 
@@ -55,19 +56,9 @@
  
 \subsection{MONTAGE 3}
 
-\clearpage  
+\clearpage
 
-\section{Résultats}
-
-\subsection{RÉSULTATS 1} 
-
-\subsection{RÉSULTATS 2}
- 
-\subsection{RÉSULTATS 3}
-
-\clearpage 
-
-\section{Analyse des résultats}
+\section{Présentation et analyse des résultats}
 
 \subsection{RÉSULTATS 1} 
 
@@ -75,14 +66,13 @@
  
 \subsection{RÉSULTATS 3}
 
-\clearpage 
+\clearpage
 
 \section{Conclusion}
 
 \vspace{5mm}
 
-
-\clearpage 
+ \clearpage
 
 \pagenumbering{Roman}
 
@@ -97,10 +87,12 @@
 
 %FORME: INITIALE_PRÉNOM. NOM_FAMILLE, ITALIQUE{NOM DU DOCUMENT}, édition de MOIS ANNÉE, OÙ L'ÉDITION S'EST FAIT, SECTION DU LIVRE.
 %EXEMPLE:
-\begin{enumerate}[label=\lbrack \arabic* \rbrack]
+\begin{enumerate}[label=\lbrack \arabic*\rbrack]
 \item R. CÔTÉ, \textit{Mécanique Quantique I: Notes de cours}, édition de septembre 2015, Département de physique de l'Université de Sherbrooke, Chapitre 1.
 \item G.BERNIER, \textit{Protocole de laboratoire: Effet photoélectrique}, Université de Sherbrooke.
 \end{enumerate}
 
+\subsection{Image}
 
 \end{document}
+
