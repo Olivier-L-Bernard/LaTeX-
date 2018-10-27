@@ -1,11 +1,13 @@
 \documentclass[twoside,letterpaper,12pt]{article}
 \usepackage{biblio}
-%\pagestyle{fancy}
+\pagestyle{fancy}
 
-\renewcommand{\headrulewidth}{0pt}
-\fancyhead[R]{} 
-\fancyhead[L]{} 
-\fancyhead[C]{} 
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyhead[C]{}
+\fancyhead[LO]{\textbf{Section \, \thesection}}
+\fancyhead[LE]{}
+\fancyhead[RO]{}
+\fancyhead[RE]{\textbf{Section \, \thesection}}
 
 \renewcommand{\footrulewidth}{0pt}
 \fancyfoot[LO]{\thepage} 
@@ -23,9 +25,9 @@
 \pagenumbering{roman}
 
 
-\title{\LARGE{TEMPLATE DE RAPPORT}}
-\redigeur{REDIGEUR 1}{REDIGEUR 2}
-\correcteur{CORRECTEUR}
+\title{\LARGE{Introduction \LaTeX}}
+\redigeur{Étudiant de physique}{}
+%\correcteur{}
 \information{Faculté des Sciences}{Département de physique}{\today}
 
 \pageTitre
@@ -38,69 +40,1074 @@
 
 \pagenumbering{arabic}
 
-\section{Introduction}
+\section{Mise en contexte}
+
+\subsection{Qu'est-ce que \LaTeX}
+
+\LaTeX est un programme de traitement de texte (comme word) qui ne fonctionne toutefois pas avec une interface graphique, mais avec des lignes de codes que nous entrons à la mains. Nous tapons tout  du texte dans l'interface de programmation puis nous éditons et modifions le texte en y entrant des lignes de codes ainsi que de commandes. \\ Puisque \LaTeX \, est un programme qui est plus près du code que de l'interface graphique, il est plus facile de contrôler le résultat final. 
+
+\subsection{Comment cela fonctionne-t-il}
+
+Pour débuter, il vous faut travailler soit sur \LaTeX \, installé sur votre ordinateur avec un compilateur (par exemple pour Linux il y a \textit{TexMaker}, pour windows il y a \textit{MikTeX}  et pour mac il y a \textit{MacTex})\footnote{Ce ne sont que quelques compilateurs parmis tant d'autre de disponible en ligne (gratuitement)}. Soit en ligne avec Share\LaTeX . \\ Si vous travailler sur votre ordinateur, vous devez télécharger les modules (angl. \textit{package}) que vous désirez utiliser dans votre code avant de pouvoir les appelers dans un code. \\ Si vous travaillez en ligne,  Share\LaTeX \,  contient déjà toutes les bibliothèques de fonctions (toutefois, vous devez les appeler dans votre code malgré tout).   \\
+Une fois votre plateforme de travail déterminée, vous voudrez débuter un nouveau document (qui sera un fichier \textit{.tex} par défaut et ce peu importe sur quelle plateforme vous travaillez). Si vous travaillez sur Share\LaTeX \, , tous les nouveau documents ont des commandes déjà écrites par défaut. Si vous travaillez sur votre ordinateur, il est possibe que vous devriez entrer quelques lignes de code pour pouvoir débuter votre document (et qu'il puisse être compilé). $\rightarrow$ Pour savoir qu'elles lignes vous devez entrer pour débuter un nouveau document, veuillez consulter la section \ref{section} du document.\\
+Une fois cela fait, vous pouvez commencer à taper votre document et à vous amuser à faire la mise en forme du texte, mise en page d'images (et autres) ainsi qu'à faire des tableaux (sections \ref{CDC}, \ref{MeF}, \ref{MeP} \& \ref{CT} de ce document)! 
+
+\flushleft
+Merci et bonne lecture.
+
+\section{Création d'un document et commandes de bases}
+\label{CDC}
+
+\subsection{Lignes de codes et commandes indispensables pour un fichier \textit{.tex} }
+\label{section}
+
+\quad Au début de chaque document \LaTeX , il vous faut tout d'abord spécifier la classe de votre document avec la commande \verb|\documentclass|. Puis, nous pouvons spécifier la taille de la police ainsi que d'autres informations  (ceci est facultatif) entre crochet \verb| [...]|. Aussi, vous devrez spécifier la classe du document entre accolade \verb|{...}| (par défaut, ShareLatex créer un document de classe \textit{article}  avec une taille de police prédéfini). Par exemple: 
+\flushleft
+
+\begin{verbatim}
+    \documentclass[twoside,letterpaper,12pt]{article}
+\end{verbatim}
+
+\bigbreak
+
+ Ensuite, il est important d'utiliser les package \textit{utf8}, \textit{fontenc} et \textit{babel} qui permettent l'utilisation d'accent (et la reconnaissance de la langue française). Sans ces modules, les compilateurs \LaTeX \, ne reconnaissent pas les accents et il est donc possible que votre code ne compilent pas. Ceci va également vous générez des messages d'erreurs. Voici les ligne pour appeller ces modules:
+ 
+
+
+\begin{verbatim}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc} 
+    \usepackage[french]{babel} 
+\end{verbatim}
+
+D'ailleur, vous voudrez utilisez le module \textit{geometry} pour contrôler la taille des marges de vos pages:
+
+\begin{verbatim}
+    \usepackage[top=2cm, bottom=2cm, left=2cm,right=2cm]{geometry}
+\end{verbatim}
+
+Finalement, pour que votre code \LaTeX \, puisse compiler, il vous faut débuter et terminer votre code. Pour le faire , votre première ligne de code que vous devez avoir avant le texte et contenu de votre document est:
+
+ 
+\begin{verbatim}
+    \begin{document}
+\end{verbatim}
+
+\bigbreak 
+
+Ensuite, la dernière ligne de votre code devra être:
+
+
+\begin{verbatim}
+    \end{document}
+\end{verbatim}
+
+
+ \subsection{Fichier style, les fichiers \textit{.sty} }
+ 
+\quad Lors de la rédaction de documents \LaTeX, nous sommes appelés à utiliser quelques, voir plusieurs, commandes qui proviennent de différentes bibliothèques de fonctions (appelés des $modules$). Ces $modules$ contiennent les codes de commandes et de fonctions que \LaTeX \, (et vous) \, utilise. Pour appeler des modules, vous devez utiliser la commande \verb|\usepackage{}|. Vous devez entrer le nom du module entre les accolades (\verb|{}|) (voir la section \ref{section} pour avoir un exemple d'appelle de module). Vous pouvez appeler une quantité de modules aussi grande que le nombre de modules disponible (en ligne ou sur votre ordinateur). Une autre façon de travailler avec les bibliothèques est d'utiliser des fichiers \textit{.sty}. Ce genre de fichier est appelé un fichier $style$ et est un code, comme votre main.tex, mais avec un nom différent et avec l'extension \textit{.sty}. Un des avantages des fichiers \textit{.sty} est le fait que vous pouvez construire vous même une banque de module que vous utilisez fréquamment. Lorsque vous appellez votre fichier \textit{.sty}, vous appellez également tous les modules qui y sont appellés (donc vous n'avez plus à appeler tous vos modules au début de chacun de vos code). Pour créer un tel fichier, vous devez tout d'abord créer un nouveau fichier dans lequel vous faite appelle a tous les modules que vous désirez utiliser dans vos codes \LaTeX \, (voir la section \ref{section} pour avoir un exemple d'appelle de module). Une fois cela fait, vous devez enregistrez-sous le fichier avec l'extension \textit{.sty}. Somme toute,c'est une bibliothèque de modules et de fonctions faite par vous-même (ou quelqu'un d'assez gentil pour partager son dur labeur). Par exemple, pour ce document j'utilise la bibliothèque \textit{biblio.sty} que j'ai fais moi même. Toutefois, tout comme les $modules$ réguliers, vous devez appeler votre bibliothèque \textit{.sty}. Pour ce faire, vous devez, encore une fois, utiliser la fonction \verb|\usepackage{}| pour l'appeller (notez que vous devez entrer dans les crochets \verb|{}| seulement le nom de votre fichier \textit{.sty} sans son extension).\\
+
+
+\subsection{Appelle de commandes, de fonctions et de symboles} 
+\label{AdC}
+
+\quad Pour faire appel a une commande ou un symbole quelconque, il faut toujours utiliser le symbole \verb|\ |  (le $backslash$) pour que \LaTeX \, puisse le reconnaître comme tel (vous devez écrire le nom de la commande, fonction ou symbole collé sur le \verb|\ |). Lorsque vous utiliser le \verb|\ |, vous verrez le texte qui lui est collé changer de couleur dépendamment de la nature de ce que vous écriver (commande, fonction ou symbole). 
+
+\section{Mise en forme du texte}
+\label{MeF}
+
+\subsection{Commandes de mise en forme }
+\quad Dans \LaTeX, pour faire de la mise en forme de texte, il suffit de faire appel a la/les commande(s) appropriée(s) pour faire la mise en forme que vous désirez. Par exemple, la commande \verb|\textbf{}| est utilisée pour mettre le texte en \textbf{gras} (\verb|\textit{}| pour \textit{italique} et \verb|underline{}| pour \underline{souligner}).\\
+Lorsque vous écrivez du texte et que vous avez terminé votre phrase, mais pas votre ligne, et que vous voulez sauter une ligne, vous voudrez faire un retour de chariot (un $enter$). Pour ce faire, vous n'avez qu'à utiliser la commande $\setminus \setminus$ à la fin de votre ligne. Par exemple:
+
+\begin{verbatim}
+J'écris un court paragraphe \\ En deux segments. 
+\end{verbatim}
+
+Donne: 
+\bigbreak
+J'écris un court paragraphe \\ En deux segments.
+
+\bigbreak 
+
+Ensuite, il peut arriver que vous ayez besoin d'espacer certains mots ou objets dans votre document. Une façon d'imposer un espace entre deux objets est d'utiliser le \textbf{$\setminus$quad} ou  \textbf{$\setminus$qquad}. Le premier étant un espace un peu plus long qu'un espace régulier, et le second un grand espace. Une autre façon est d'utiliser s'implement <<$\setminus$,>> . Par exemple:
+
+\begin{verbatim}
+Un \quad espace plus \qquad grand.
+\end{verbatim}
+
+\bigbreak
+Donne:
+
+\bigbreak 
+Un \quad espace plus \qquad grand.
+
+\bigbreak 
+
+Nous pouvons aussi décider de modifier la taille du texte pour un mot, ou une phrase spécifique. Pour ce faire, je vous suggère une fonction entre accolade qui est le \verb|{\size}|. Pour utiliser cette commande, vous devez mettre le segment de texte que vous désirez modifier entre accolade (\verb|{}|) à la suite de la commande \{$\setminus$size\}. Vous pouvez utilisez 3 tailles (\textit{size}): gros, par défaut (celle standard de votre document) et petit. Par exemple, le code: 
+
+
+\begin{verbatim}
+{\large texte} \\ 
+{\normalsize  texte} \\
+{\tiny texte} \\
+\end{verbatim}
+\bigbreak 
+
+Donne ceci:
+
+\bigbreak 
+
+{\large texte} \\ 
+{\normalsize  texte} \\
+{\tiny texte} \\
+
+\bigbreak
+
+Finalement (dans cette introduction), il est possible de \hilight{surligner} du texte ainsi que de choisir la couleur du surlignage. Pour faire ceci, vous aurez besoin du package \textit{color}. Pour faciliter l'utilisation de cette fonction, je vous suggère\footnotemark{}:
+
+\begin{verbatim}
+\usepackage{soul}
+\usepackage{color}
+\newcommand{\hilight}[1]{\colorbox{lightgray}{#1}}
+\end{verbatim}
+
+\footnotetext{Notez que ceci est une fonction que j'ai créé dans \LaTeX \, et qui doit être écrite soit dans votre fichier \textit{.sty} ou avant votre \textit{begin\{document\}}}
+
+Pour surligner du texte , vous n'avez qu'à taper la commande \verb|\hilight{}| (vous n'avez qu'a taper le texte que vous désirez surligner entre les accolades). Pour modifier les paramètres de la couleur du surlignage, vous devez taper le nom de la couleur désirez (en anglais) entre les accolades après le segment \verb|\colorbox| dans la ligne de code que je vous ait fourni ainsi que le numéros après le dièse (le \#) entre accolade. \\
+
+
+
+\subsection{Équations \& symboles}
+
+\quad Dans plusieurs domaine de la science et du travail, nous sommes souvent obligé d'écrire des équations mathématiques qui peuvent être simples ou bien complexes.\\ 
+Pour ce faire, nous devons utilisers quelques modules que je vous donne:
+
+\begin{verbatim}
+    \usepackage{amsmath,amssymb,bm,upgreek}
+\end{verbatim}
+
+Lors de l'écriture de fonctions mathématiques, nous pouvons généralement procéder de deux façons: la première étant de les introduire dans le texte, la seconde étant de les mettre en évidence à l'aide de fonctions appropriées.\\
+Lorsque nous voulons introduire un symbole\footnote{J'ai mit un tableau des lettres Grec ainsi qu'un tableau de symboles mathématiques qui sont souvent utilisé à la section \ref{TS}} dans une formule,  nous devons procéder de la même manière que spécifié dans la section \ref{AdC} (par exemple \verb|$\omega$| donne $\omega$). Notez que si vous mettez la première lettre de la variable en majuscule, nous obtenons le même symbole mais, majuscule\footnote{Si le symbole à une majuscule bien entendu} (merci de ne pas m'en vouloir pour la redondance).\\
+Lors de la rédaction d'équations mathématiques dans le texte, nous devons entourer l'équation (ou bien le segment de texte ou de code désiré) par une paire de \$. L'utilisation de ces symboles créer un environnement dit \textit{mathématique} dans le code qui impose la typographie mathématique au segment que la paire de \$ entoure (cette typographie élimine les espaces ainsi que les accents). De plus, sans l'utilisation des symboles \$, l'ajout d'indices et d'exposants est impossible.\\
+Ensuite, nous sommes souvent obligé d'exprimer des exposants ainsi que des indices dans pour les variables dans différentes équations. Pour faire cela, il faut  utiliser le  \verb|_| pour mettre un indice et utiliser le   \verb|^| pour mettre un exposant à une variable\footnote{Lorsque vous mettez des indices et des exposants, mettez ce que vous désirez mettre en indice ou exposant entre accolades}. Finalement, le tout doit être entouré par une paire de \$ \footnote{Sans ces symboles vous ne travaillez pas dans un environement dit \textit{mathématique}}. Sans ces symboles, il est impossible de mettre des indices ni d'exposants. Par exemple:
+
+\begin{verbatim}
+$R_{e}^{P} $ \\
+Les indices$_{Ici}$ et les exposants${La}$, génial$_{Bas}^{Haut}$
+\end{verbatim}
+
+Donne:
+\bigbreak 
+
+$R_e^P$ \\
+Les indices$_{Ici}$ et les exposants$^{La}$, génial$_{Bas}^{Haut}$
+\bigbreak 
+
+Pour écrire une fraction dans une équations, nous devons utiliser la fonction \verb|$\frac{}{}$|. La première paire d'accolade est le numérateur de la fonction et la seconde paire est le dénominateur de la fraction. Par exemple:
+
+\begin{verbatim}
+$ c = \frac{a}{365-b}$
+\end{verbatim}
+
+
+Donne:
+\bigbreak 
+$c =\frac{a}{365-b}$
+\bigbreak 
+
+Lorsque nous mettons les équations en évidence, je vous suggère l'utilisation de la fonction $\setminus$begin\{align\}. Cette fonction permet de numéroter, d'aligner (vous devez mettre le symbole \verb|&| pour spécifier l'endroit ou vous voulez que l'alignement soit fait) ainsi que d'écrire en typographie mathématique (cette fonction créer également un environnement mathématique). Voici deux exemples de formules mise en évidence à l'aide de la fonction $\setminus$begin\{align\} :
+\bigbreak 
+Par exemple: \\
+
+\begin{verbatim}
+\begin{align} 
+    T_{R}=\frac{R}{\sqrt{\left(R+R_{L}\right)^2} 
+    \label{frm} 
+\end{align} 
+\end{verbatim}
+
+Donne:
+
+\begin{align}
+    T_{R}= \frac{R}{\sqrt{\left(R+R_{L}\right)^2}}
+    \label{frm}
+\end{align}
+
+
+Voici une autre formule\footnote{Notez l'utilisation de $\setminus nonumber$ pour éliminer le numéros de l'équation.}:
+
+\begin{verbatim}
+\begin{align}
+\nonumber
+    T_{c}= \frac{1}{\omega C\sqrt{\left(R+R_{L}\right)^2}}
+    \label{frm_2}
+\end{align}
+\end{verbatim}
+Donne:
+\begin{align}
+\nonumber
+    T_{c}= \frac{1}{\omega C\sqrt{\left(R+R_{L}\right)^2}}
+    \label{frm_2}
+\end{align}
+
+
+\subsection{Références}
+\label{RF}
+
+\quad Dans les textes, nous pouvons faire référence aux formules, images, tableaux, etc que nous avons identifié à l'aide d'un $label$. Pour ce faire, nous avons besoin du module \textit{hyperref}:
+
+\begin{verbatim}
+\usepackage{hyperref}
+\end{verbatim}
+
+Ensuite, nous devons écrire \verb|\label{}| sous l'objet (équations, image, etc) que nous voulons identifier, puis lui attribuer un nom de référence dans l'accolade. Ensuite, pour faire référence au label (ou l'objet identifié), nous devons employer la fonction \verb|\ref{}|. Par exemple, si je veux faire référence  à la formule \ref{frm}, nous pouvons employer la fonction  \verb|\ref{}| ou \verb|\eqref{}| pour avoir le mot \textit{équation} devant le numéros de référence. Une fois le  \verb|\ref{}| (ou\verb|\eqref{}|) utilisé, nous devons écrire le $label$ de l'objet désiré dans l'accolade. Par exemple:
+
+\begin{verbatim}
+\ref{frm}
+\eqref{frm}
+\end{verbatim} 
+
+Donne: 
+\smallbreak
+\ref{frm} \\
+\eqref{frm}
+\smallbreak
+
+
+Ce qui équivaut au numéros de l'équation de $T_R$. L'avantage de l'utilisation des \textit{label}, est la mise à jour automatique des références (son numéros). Le même principe s'applique aussi aux images et graphiques, que nous verrons un peu plus loin dans ce document \footnote{Pour faire référence à une image (même si elle fait partie d'un ensemble), nous n'avons qu'à appliquer le même principe que pour les équations. Par exemple, $\setminus$ref\{im4\} fait référence à l'image \ref{im4} de la sous-section \ref{UI},ce qui correspond à l'image des points des initiés.}.
+
+\section{Mise en page des images}
+\label{MeP}
+
+\subsection{Une seule image}
+
+\quad Lorsque nous voulons faire la mise en page d'images, nous avons besoin des modules \textit{caption} et \textit{graphicx} :
+
+\begin{verbatim}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{float}
+\end{verbatim}
+
+Ensuite, nous devons les appeler puis donner quelques informations de base\footnote{Si vous travaillz sur Share\LaTeX, vous devrez importez vos images en ligne dans votre projet pour pouvoir les utiliers. Sur votre ordinateur, les images doivent être dans le même document que votre code.}. Tout d'abord, pour emmener une image dans le document, il faut employer la fonction \verb|\begin{figure}|. Une fois la figure commencée, nous pouvons la centrer avec la fonction \verb|\centering|, puis nous appelons l'image désirée à l'aide de la fonction \verb|\includegraphics[width=qqc]{nom}|. Dans cette fonction nous devons  spécifier la taille de l'image entre crochet et le nom de l'image (avec son extension) entre accolades. Ensuite, nous lui donnons un nom avec la fonction \verb|\caption{}| et nous fermons la figure avec un \verb|\end{figure}|.
+
+
+Par exemple:
+\begin{verbatim}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=100mm]{MBC.jpg}
+    \caption{Mon beau chien \textit{Gargouille}}
+    \label{im}
+\end{figure}
+\end{verbatim}
+
+\bigbreak
+
+Donne:
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=120mm]{MBC.jpg}
+    \caption{Mon chien \textit{Gargouille}}
+    \label{im}
+\end{figure}
+
+\subsection{Plusieurs images}
+\label{UI}
+\quad Ensuite, pour créer un groupe d'image, il vous faut tout d'abord avoir les modules \textit{caption} , \textit{graphicx} et \textit{subcaption}:
+
+\begin{verbatim}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\end{verbatim}
+
+Ensuite, nous devons employer les mêmes principes que pour une image seule. Nous commençons avec un \verb|\begin{figure}|. Une fois la figure commencée, nous pouvons la centrer avec la fonction \verb|\centering|, puis nous créons une sous-figure (\verb|\beginsubfigure|, qui est semblable à la figure) puis dans cette sous-section, nous utilisons encore \verb|\includegraphics|. Dans cette fonction, nous pouvons contrôler la taille de l'image en la spécifiant entre les crochets. Aussi nous devons donner le nom de l'image (avec son extension) entre accolade. Ensuite, nous lui donnons un sous-nom avec la fonction \verb|\caption{}| et nous fermons la sous-figure avec une \verb|\end{subfigure}|. Si vous voulez donner un $label$ a une sous-image, vous n'avez qu'à écrire le code \verb|\label{}| sous le $caption$ de l'image et procéder comme spécifier dans la section \ref{RF}. Nous répétons le processus pour chaque image que nous voulons (dans l'exemple qui suis ce sera pour trois images) puis nous donnons un noms à l'ensemble d'image que nous venons d'introduire à l'aide d'un dernier \verb|\caption| qui n'est pas dans une sous-image. Une fois cela fait, nous fermons l'image avec un dernier \verb|\end{figure}|. Par exemple: 
+
+
+\flushleft
+    
+\begin{verbatim}
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{50mm}
+        \includegraphics[width=\textwidth]{beaugraphique.png}
+        \caption{Graph 1}
+        \label{im2}
+    \end{subfigure}
+    \begin{subfigure}[b]{40mm}
+        \includegraphics[width=\textwidth]{beaugraph2.png}
+        \caption{Graph 2}
+        \label{im3}
+    \end{subfigure}
+    \begin{subfigure}[b]{30mm}
+       \includegraphics[width=\textwidth]{points.jpg}
+       \caption{Points des initiés}
+       \label{im4}
+    \end{subfigure}
+    \caption{Exemple de disposition d'images}
+\end{figure}
+\end{verbatim}
+
+\smallbreak
+Donne:
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{50mm}
+        \includegraphics[width=\textwidth]{beaugraphique.png}
+        \caption{Graph 1}
+        \label{im2}
+    \end{subfigure} 
+    \begin{subfigure}[b]{40mm}
+        \includegraphics[width=\textwidth]{beaugraph2.png}
+        \caption{Graph 2}
+        \label{im3}
+    \end{subfigure} 
+    \begin{subfigure}[b]{25mm}
+        \includegraphics[width=\textwidth]{points.jpg}
+        \caption{Points des initiés}
+        \label{im4}
+    \end{subfigure}
+    \caption{Exemple de disposition d'images}
+\end{figure}
+
+%\clearpage
+
+\section{Création de tableau}
+\label{CT} 
+
+\subsection{Tableau}
+
+\quad Dans \LaTeX, faire des tableaux simple peut s'avérer être à la fois une tâche simple et ardue. Tout d'abord, cette tâche peut être fastidieuse car il faut entrer les données manuellement et les mises à jour ne se font pas automatiquement (donc il est préférable de soit se faire un tableau vide puis le remplir ou en faire un une fois que toutes vos données sont acquise). Elle peut être  conviviale car nous savons exactement ce que à quoi le tableau va ressembler.\\
+Premièrement, pour créer un tableau, il vous faut le module \textit{array} :
+
+\begin{verbatim}
+    \usepackage{array}
+\end{verbatim}
+Et utiliser la ligne de code suivante (pour que le titre sois Tableau et non \textit{Table}):
+
+\begin{verbatim}
+    \addto\captionsfrench{\def\tablename{{\sc Tableau}}}
+\end{verbatim}
+
+Ensuite, il vous faut utiliser la fonction \verb|\begin{table}[ht]|. Une fois cela fait, nous pouvons le centrer à l'aide d'une commande  \verb|\centering| puis nous commençons ce qui est appellé le \textit{tabular}. Avec la fonction $tabular$,  nous devons spécifier, entre accolades, le nombre de colonnes (avec des \textbf{c}) ainsi qu'où se situent les lignes verticales du tableau (avec des "|") (voir l'exemple pour plus de détails). Puis, pour spécifier les lignes horizontales, nous utilisons la commande \verb|\hline| \footnote{pour faire une double ligne horizontale, vous devz mettre deux fois la commande $\setminus$hline de suite.} à l'endroit où une ligne horizontale doit se situer. Une fois la tête du tableau fait, nous devons employers des \verb|\\| pour faire un retour de chariot (descendre d'une ligne). Nous devons employers ensuite des éperluettes (\verb|&|) pour spécifier la séparation des colonnes\footnote{Le nombre d'éperluette dans chaque ligne doit équivaloir au nombre de colonnes (les c) du tableau (moins un) spécifié dans la commande $tabular$} . Nous devons terminer le tableau avec un \verb|\end{tabular}| et un \verb|\end{table}|. Par exemple:
+
+
+\flushleft 
+\begin{verbatim}
+\begin{table}[ht]
+    \centering
+\begin{tabular}{|c c  |c  c  c|}
+     \hline
+    Composantes & &  & Valeurs   &   \\
+     \hline \hline  
+     $R_3$ &  (\Omega) & 9960  & \pm  & 2  \\
+     \hline 
+     $R_4$ & (\Omega) & 198,6  & \pm  & 0,1  \\
+     \hline 
+     $R_5$ & (\Omega) & 99600  & \pm  & 10 \\
+     \hline 
+     $C_1$ & (F) & 199,07   & \pm & 0,01  \\
+     \hline 
+\end{tabular} 
+\caption{Valeurs des Composantes de la partie 2 } 
+\end{table}
+
+\end{verbatim}
+\bigbreak
+
+Donne:
+
+\begin{table}[ht]
+    \centering
+\begin{tabular}{|c c  |c  c  c|}
+%devrait enlever la première ligne
+     \hline
+    Composantes & & & Valeurs   & \\
+     \hline\hline
+     $R_3$ &  ($\Omega$) & 9960  & $\pm$  & 2 \\
+     \hline
+     $R_4$ & ($\Omega$) & 198,6  & $\pm$  & 0,1 \\
+     \hline
+     $R_5$ & ($\Omega$) & 99600  & $\pm$  & 10 \\
+     \hline
+     $C_1$ & (F) & 199,07  10$^{-9}$  & $\pm$ & 0,01  \\
+     \hline
+\end{tabular}
+\caption{Valeurs des Composantes de la partie 2 }
+\end{table}
+
+\section{Compléments}
+
+\subsection{Section}
+\label{compl}
+
+\quad Pour créer une section, simplement utiliser la fonction \verb|\Section{}| \\
+Pour un sous-section, utiliser la fonction  \verb|\Subsection{}| \\
+Pour faire un autre niveau de section, utiliser la fonction \verb|\Subsubsection{}| \\
+Spécifier le nom de votre section, sous-section ou sous-sous-section entre les accolades.\\
+Cela va faire le comtpe des sections de façon automatique et en faire les mises à jours.
+
+\subsection{En-tête}
+
+\quad Pour faire des en-têtes comme dans ce document, il nous faudra quelques petits ajouts. Tout d'abord, il nous faut le module $fancyhdr$. Ensuite, il faut spécifier le style de page comme étant \textit{fancy}. À la suite de cela, il vous faut spécifier le texte qui sera écrit aux différents endroit en appellant un fancyhead (\verb|\fancyhead|). Pour cette commande, vous devez spécifier l'emplacement dans l'en-tête ($L$ a gauche, $R$ a droite et $C$ au centre)\footnote{$RO$ a droite des pages impaires, $RE$ a droite des pages paires,$LO$ a gauche des pages impaires et $LE$ a gauche des pages paires} ,  entre crochets \verb|[...]| et vous devrez écrire entre accolades le texte désirée \verb|{...}|. Voici en exemple le code utilisé pour l'en-tête de ce document:
+
+\flushleft 
+\begin{verbatim}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyhead[C]{} 
+\fancyhead[LO]{\textbf{Section \, \thesection}}
+\fancyhead[LE]{\rightmark}
+\fancyhead[RO]{\rightmark}
+\fancyhead[RE]{\textbf{Section \, \thesection}}
+\end{verbatim}
+\vspace{5mm}
+
+Pour faire un pied de page, le code est identique à l'exception que vous devez écrire $fancyfoot$ au lieu de $fancyhead$. Notez que ces lignes de code doivent être écrite avant le \verb|\begin{document}|\footnote{Je vous déconseille d'écrire cette commande dans un fichier \textit{.sty}. Il est plus facile de travailler avec cette fonction dans votre fichier \textit{main.tex}}. Voici en exemple le code qui était utilisé pour le pied de page de ce document:
+
+\begin{verbatim}
+\renewcommand{\footrulewidth}{0.5pt}
+\fancyfoot[C]{} 
+\fancyfoot[LE]{}
+\fancyfoot[LO]{\textbf{page} \thepage}
+\fancyfoot[RE]{\textbf{page} \thepage}
+\fancyfoot[RO]{Introduction \LaTeX} 
+\end{verbatim}
 
 \clearpage
 
-\section{Théorie}
+\subsection{Liste à puce, numéros, etc.}
+\quad Dans les document \LaTeX \,, nous voulons parfois faire des listes (à puce, numéroté, etc). Pour ce faire, nous devons tout d'abord appeler le package \textit{enumitem} :
 
-\clearpage 
+\begin{verbatim}
+    \usepackage{enumitem}
+\end{verbatim}
 
-\section{Montage expérimental}
+Une fois ce package appelé, nous pouvons créer des listes composé de différents symboles, chiffres, alphabets, etc. Pour créer une liste a puces standard, nous devons tout d'abord créer un environnement \textit{liste} à l'aide de \verb|\begin{itemize}[label=... , font= size]|. Entre les accolades, nous spécifions le type de liste que nous désirons ($itemize$ ou $enumerate$). Ensuite, entre les crochets, nous pouvons définir définir ce qui servira de puce. Finalement nous pouvons préciser la taille des points. Si nous laisson les crochets vides, \LaTeX utilise un symbole et une taille par défaut. Par exemple: 
 
-\subsection{MONTAGE 1} 
+\begin{verbatim}
+\begin{itemize}
+    \item Premier
+    \item Second
+\end{itemize}
+\end{verbatim}
 
-\subsection{MONTAGE 2}
- 
-\subsection{MONTAGE 3}
+Donne:
 
-\clearpage  
+\begin{itemize}
+    \item Premier
+    \item Second
+\end{itemize}
 
-\section{Résultats}
+Lorsque nous définissons un $label$ et un $font$ entre les crochets, cela donne une nouvelle forme à la liste. Par exemple:
 
-\subsection{RÉSULTATS 1} 
+\begin{verbatim}
+\begin{itemize}[label=\textbullet, font=\scriptsize]
+    \item Premier
+    \item Second
+\end{itemize}
+\end{verbatim}
 
-\subsection{RÉSULTATS 2}
- 
-\subsection{RÉSULTATS 3}
+Donne ceci:
 
-\clearpage 
+\begin{itemize}[label=\textbullet, font=  \scriptsize]
+    \item Premier
+    \item Second
+\end{itemize}
 
-\section{Analyse des résultats}
+\bigbreak 
+De plus, dans les options de $enumitem$, nous pouvons aussi donner un label vide (\verb|{}|), ou simplement un espace. Par exemple:
 
-\subsection{RÉSULTATS 1} 
+\begin{verbatim}
+\begin{itemize}[label={}]
+    \item Premier
+    \item Second
+\end{itemize}
+\end{verbatim}
 
-\subsection{RÉSULTATS 2}
- 
-\subsection{RÉSULTATS 3}
+Donne:
 
-\clearpage 
+\begin{itemize}[label={}]
+    \item Premier
+    \item Second
+\end{itemize}
+\bigbreak 
 
-\section{Conclusion}
+Finalement (pour les itemize), nous pouvons définir un symbole ou autre choses comme $label$ dans les listes. Par exemple:
 
-\vspace{5mm}
+\begin{verbatim}
+\begin{itemize}[label=$\lambda$, font=\scriptsize]
+    \item Premier
+    \item Second
+\end{itemize}
+\end{verbatim}
 
+Donne:
 
-\clearpage 
+\begin{itemize}[label=$\lambda$, font=\scriptsize]
+    \item Premier
+    \item Second
+\end{itemize}
+
+La seconde option pour les listes sont les listes $enumerate$. Lorsque nous utilisons cette option, nous pouvons définir différent $label$ ($Numeros$, $Chiffres Romain$, $Alphabet$, etc). En plus, nous pouvons imbriquer des listes dans des listes (chaque imbrication va créer un indentation entre la liste imbriqué et la liste qui lui est supérieur). En plus d'énumérer et de mettre à jour les liste automatiquement, les sous-sections s'incrémente aussi avec la liste dans laquelle elles sont introduite (à l'exception des listes avec les alphabets). Si nous ne spécifions pas de $label$, la liste par défaut utilisé par \LaTeX \, sera la liste à numéros standard. Par exemple:
+
+\begin{verbatim}
+\begin{itemize}[label=\textbullet, font= \scriptsize]
+    \item Premiere
+    \begin{enumerate}
+     \item Sous-premier
+     \begin{enumerate}[label=\Alph*)]
+        \item Ss-sous premier
+        \begin{enumerate}[label=\alph*)]
+        \item Ss-sous premier
+        \end{enumerate}
+        \item Ss-sous second
+        \begin{enumerate}
+        \item Ss-ss-sous premier
+        \end{enumerate}
+     \end{enumerate}
+    \item Sous second
+     \begin{enumerate}
+        \item Ss-sous Premier
+     \end{enumerate}
+    \end{enumerate}
+\end{itemize}
+\end{verbatim}
+
+Donne:
+
+\begin{itemize}[label=\textbullet, font= \scriptsize]
+    \item Premier
+    \begin{enumerate}
+     \item Sous-premier
+     \begin{enumerate}[label=\Alph*)]
+        \item Ss-sous premier
+        \begin{enumerate}[label=\alph*)]
+        \item Ss-sous premier
+        \end{enumerate}
+        \item Ss-sous second
+        \begin{enumerate}
+        \item Ss-ss-sous premier
+        \end{enumerate}
+     \end{enumerate}
+    \item Sous second
+     \begin{enumerate}
+        \item Ss-sous Premier
+     \end{enumerate}
+    \end{enumerate}
+\end{itemize}
+
+\clearpage
 
 \pagenumbering{Roman}
 
 \section{Annexes}
+\label{TS}
+\subsection{Lettres grecs}
 
-\subsection{Image}
-
+\begin{table}[ht!]
+    \centering
+\begin{tabular}{|c |c  |c |}
+%devrait enlever la première ligne
+     \hline
+   Nom & Symbole ou commande &  Résultat    \\
+     \hline\hline
+   alpha & $\setminus$alpha & $\alpha$   \\
+     \hline
+   beta & $\setminus$beta & $\beta$  \\
+     \hline
+   gamma & $\setminus$gamma & $\gamma$  \\
+     \hline
+   delta & $\setminus$delta & $\delta$   \\
+     \hline
+   epsilon & $\setminus$epsilon & $\epsilon$    \\
+     \hline
+   zeta & $\setminus$zeta & $\zeta$  \\
+     \hline
+   eta & $\setminus$eta & $\eta$   \\
+     \hline
+   theta & $\setminus$theta & $\theta$  \\
+     \hline
+    kappa  & $\setminus$kappa & $\kappa$   \\
+     \hline
+  lambda  & $\setminus$lambda & $\lambda$  \\
+     \hline
+   mu & $\setminus$mu & $\mu$   \\
+     \hline
+  nu  & $\setminus$nu & $\nu$  \\
+     \hline
+  xi  & $\setminus$xi & $\xi$  \\
+     \hline
+  pi  & $\setminus$pi & $\pi$  \\
+     \hline
+  rho  & $\setminus$rho & $\rho$  \\
+     \hline
+  sigma  & $\setminus$sigma & $\sigma$  \\
+     \hline
+  tau  & $\setminus$tau & $\tau$   \\
+     \hline
+  upsilon  & $\setminus$upsilon & $\upsilon$   \\
+     \hline
+   phi & $\setminus$phi & $\phi$   \\
+     \hline
+  chi  & $\setminus$chi & $\chi$   \\
+     \hline
+  psi  & $\setminus$psi & $\psi$  \\
+     \hline
+   omega & $\setminus$omega & $\omega$  \\
+     \hline
+   Gamma & $\setminus$Gamma & $\Gamma$  \\
+     \hline
+   Delta & $\setminus$Delta & $\Delta$   \\
+     \hline
+   Theta & $\setminus$Theta & $\Theta$  \\
+     \hline
+  Lambda  & $\setminus$Lambda & $\Lambda$  \\
+     \hline
+  Xi  & $\setminus$Xi & $\Xi$  \\
+     \hline
+  Pi  & $\setminus$Pi & $\Pi$  \\
+     \hline
+  Sigma  & $\setminus$Sigma & $\Sigma$  \\
+     \hline
+  Upsilon  & $\setminus$Upsilon & $\Upsilon$   \\
+     \hline
+   Phi & $\setminus$Phi & $\Phi$   \\
+     \hline
+  Psi  & $\setminus$Psi & $\Psi$  \\
+     \hline
+   Omega & $\setminus$Omega & $\Omega$  \\
+     \hline
+     varepsilon  & $\setminus$varepsilon & $\varepsilon$  \\
+     \hline
+     vertheta & $\setminus$vartheta & $\vartheta$   \\
+     \hline
+     varpi  & $\setminus$varpi & $\varpi$  \\
+     \hline
+     varrho  & $\setminus$varrho & $\varrho$  \\
+     \hline
+     varsigma  & $\setminus$varsigma & $\varsigma$   \\
+     \hline
+     varphi & $\setminus$varphi & $\varphi$ \\
+     \hline
+\end{tabular}
+\end{table}
 
 \clearpage
 
-\subsection{Références}
+\subsection{Symboles mathématique}
 
-%FORME: INITIALE_PRÉNOM. NOM_FAMILLE, ITALIQUE{NOM DU DOCUMENT}, édition de MOIS ANNÉE, OÙ L'ÉDITION S'EST FAIT, SECTION DU LIVRE.
-%EXEMPLE:
-\begin{enumerate}[label=\lbrack \arabic* \rbrack]
-\item R. CÔTÉ, \textit{Mécanique Quantique I: Notes de cours}, édition de septembre 2015, Département de physique de l'Université de Sherbrooke, Chapitre 1.
-\item G.BERNIER, \textit{Protocole de laboratoire: Effet photoélectrique}, Université de Sherbrooke.
-\end{enumerate}
+\begin{table}[ht]
+    \centering
+\begin{tabular}{|c |c  |c |}
+%devrait enlever la première ligne
+     \hline
+   Nom & Symbole ou commande &  Résultat    \\
+     \hline\hline
+  Infinie  & $\setminus$infty &  $\infty$  \\
+     \hline
+  Dérivé partielle  & $\setminus$partial & $\partial$  \\
+     \hline
+    Intégrale & $\setminus$int &  $\int$  \\
+     \hline
+         Intégrale curviligne & $\setminus$oint &  $\oint$  \\
+     \hline
+  plus ou moins  & $\setminus$pm & $\pm$ \\
+     \hline
+  Angle  & $\setminus$angle & $\angle$   \\
+     \hline
+  Somme  & $\setminus$sum$\setminus$limits\^ \, \{Dessus\}\_\{Dessous\} & $\sum\limits^{Dessus}_{Dessous}$   \\
+     \hline
+   racine & $\setminus$sqrt\lbrack ordre \rbrack \{dsRacine\} & $\sqrt[ordre]{dsRacine}$   \\
+     \hline
+  vecteur  & $\setminus$overrightarrow\{ abc \} & $\overrightarrow{abc}$ \\
+     \hline
+   Flèche vers la droite & $\setminus$rightarrow & $\rightarrow$  \\
+     \hline
+   Flèche vers la gauche & $\setminus$leftarrow & $\leftarrow$  \\
+     \hline
+        Flèche vers la gauche et droite & $\setminus$Longleftrightarrow & $\Longleftrightarrow$  \\
+     \hline
+   Inégale & $\setminus$neq & $\neq$  \\
+     \hline
+   Équivalent & $\setminus$equiv & $\equiv$   \\
+     \hline
+  Environ égale  & $\setminus$simeq & $\simeq$   \\
+     \hline
+  Environ  & $\setminus$sim & $\sim$  \\
+     \hline
+   Approximatif & $\setminus$approx & $\approx$   \\
+     \hline
+  Nabla  & $\setminus$nabla & $\nabla$  \\
+     \hline
+   Convolution  & $\setminus$ast & $\ast$   \\
+     \hline
+  Réel  & $\setminus$Re & $\Re$  \\
+     \hline
+  Imaginaire  & $\setminus$Im & $\Im$  \\
+     \hline
+   Produit scalaire & $\setminus$cdot & $\cdot$  \\
+     \hline
+  Produit vectorielle  & $\setminus$times & $\times$  \\
+     \hline
+    C.Q.F.D.  & $\setminus$Box & $\Box$ \\
+     \hline
+    Lagrange\footnotemark{} & $\setminus$mathscr\{L\}  & $\mathscr{L}$ \\
+    \hline 
+    Hamiltonien & $\setminus$mathscr\{H\}  & $\mathscr{H}$ \\
+    \hline
+\end{tabular}
+\end{table}
+\footnotetext{il vous faut le package \textit{mathrsfs} pour pouvoir écrire ce symbole}
 
+\clearpage
+
+\subsection{Code du fichier \textit{.sty} de ce document}
+
+\begin{verbatim}
+\usepackage[T1]{fontenc}     
+\usepackage[top=2cm, bottom=2cm, left=2cm,right=2cm]{geometry}%pour les marges
+
+\usepackage{fancyhdr} %pour les en_tetes et bas_de_pages
+
+\usepackage{float}
+
+\usepackage{ragged2e}
+
+\usepackage{eso-pic}
+
+\usepackage{cancel}
+%\usepackage{physics} %pour écrire plus facilement les équations
+\usepackage[per-mode=symbol]{siunitx}
+
+\usepackage{enumitem} %pour les liste à puces
+
+\usepackage{soul} %Permet de surligner du texte
+
+\usepackage{mathrsfs} %Le symbole de Lagrange
+
+\usepackage{marvosym} %symbole de téléphone et autres
+
+\usepackage{color}
+
+%Permet de créer des liens dynamiques dans le document
+\usepackage{hyperref}
+
+\usepackage[utf8]{inputenc} % latin1% Suppport de Latex pour les accents
+\usepackage[french]{babel} % Support du pdf pour les accents
+\usepackage{caption}					%Permet de placer des libellés sous les tableaux, Figure, etc
+\usepackage{subcaption}					%Permet de placer des sous-libellés dans des sous-figures, etc
+\addto\captionsfrench{\def\figurename{{\sc Figure}}}	%Change le libellé de Figure à Figure ...
+\addto\captionsfrench{\def\tablename{{\sc Tableau}}}	%Change le libellé de Table à Tableau
+
+\usepackage{setspace}%pour les interlignes
+
+\usepackage{array}	%pour les tableaux
+\usepackage{amsmath,amssymb,bm,upgreek}
+\usepackage{graphicx}
+%Permet d'insérer des images en format paysage
+
+\usepackage{pdflscape}
+
+%Couleur personnalisées 
+\usepackage{xcolor}				%permet de créer des couleurs personnalisés
+\definecolor{bleu}{RGB}{184,212,222}		
+\definecolor{gris}{RGB}{70,77,79}
+\definecolor{VertCommantaire}{rgb}{0,0.6,0}
+\definecolor{MauveChaine}{rgb}{0.58,0,0.82}
+
+%Pour insérer du code pis que ce soit beau
+\usepackage[most]{tcolorbox}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\blap}[1]{\vbox to 0pt{#1\vss}}
+\newcommand\AtUpperLeftCorner[3]{%
+  \put(\LenToUnit{#1},\LenToUnit{\dimexpr\paperheight-#2}){\blap{#3}}%
+}
+\newcommand\AtUpperRightCorner[3]{%
+  \put(\LenToUnit{\dimexpr\paperwidth-#1},\LenToUnit{\dimexpr\paperheight-#2}){\blap{\llap{#3}}}%
+}
+
+\def\headline#1{\hbox to \hsize{\hline{3cm}\quad\lower.3em\hbox{#1}\quad\hrulefill}} 
+%Permet de faire des lignes tronqué au centre
+
+\fancypagestyle{firststyle} %nouvelle commande pour modifier en-tête d'une page 
+%(spécifié avec \thispagestyle{firststyle})
+{
+   \renewcommand{\headrulewidth}{0pt}
+   \fancyhf{}
+   \fancyfoot[C]{\thepage}
+}
+
+
+\fancypagestyle{firststyle2} %nouvelle commande pour modifier en-tête d'une page 
+%(spécifié avec \thispagestyle{firststyle2})
+{
+   \renewcommand{\headrulewidth}{0pt}
+   \renewcommand{\footrulewidth}{0pt}
+   \fancyhf{}
+}
+
+%Commandes en-tête pied de pages
+%\fancyhead[C]{Introduction \LaTeX} 
+%\fancyhead[L]{U de S}
+%\fancyhead[R]{\date{\today}}
+
+%\renewcommand{\footrulewidth}{0.5pt}
+%\fancyfoot[C]{\textbf{page} \thepage} 
+%\fancyfoot[L]{\rightmark}
+%\fancyfoot[R]{\textbf{Section \thesection}} 
+
+
+%Faire un en-tête de devoir
+\newcommand*{\redacteur}[3]{\def\Nomredacteur{#1  \hfill #3 \\ #2}}
+\newcommand*{\coteCours}[1]{\def\CoteDuCours{#1}}
+\newcommand*{\nodev}[1]{\def\NoDev{#1}}
+\newcommand\entete{
+    \thispagestyle{firststyle}
+    \flushleft
+    \begin{minipage}{17cm}
+    {\Large \Nomredacteur \par} 
+    \vspace{2mm}
+    {\large \CoteDuCours}
+    \end{minipage}
+    
+    \vspace{0.5cm}
+    \headline{\textbf{{\Large DEVOIR \NoDev}}}
+    \vspace{1cm}
+}
+
+%Commande pour faire une en-tête
+%\redacteur{NOM1}{NOM2}{28/10/16}
+%\coteCours{CODE DU COURS}
+%\titreDuCours{NOM DU COURS}
+%\nodev{Numéros du devoir}
+%\entete
+
+%Code de la page titre
+\newcommand*{\redigeur}[2]{\def\redigeur{#1 \\#2}}
+\newcommand*{\correcteur}[1]{\def\correcteur{#1}}
+\newcommand*{\information}[3]{\def\info{#1 \\ #2 \\ \vspace{2cm} #3}}
+\newcommand\pageTitre{
+    \thispagestyle{empty}
+
+\begin{titlepage}
+    \enlargethispage{2cm}
+ 
+    \AddToShipoutPicture{
+             %\AtUpperLeftCorner{1.5 cm}{2.25cm}{\includegraphics[width=7cm]{logo.png}}
+        \AtUpperRightCorner{1.5cm}{1cm}{\includegraphics[width=4cm]{UdeS.jpg}}
+    }
+ 
+    \begin{center}
+        \vspace*{7cm}
+ 
+        \textsc{\@title}
+        \HRule
+        \vspace*{0.5cm}
+ 
+        \large{\textsc{\redigeur}} \\
+        \vspace{2.5cm}
+        Pour tous \\
+        
+        \vspace{1.5cm}
+        \info        
+        
+    \end{center}
+ 
+    \vspace*{1cm}
+ 
+    \begin{center}
+        \makebox[\textwidth]{\includegraphics[width=\textwidth]{UdeS2.png}}
+    \end{center}
+\end{titlepage}
+
+\ClearShipoutPicture
+\makeatletter
+\cleardoublepage %oblige latex à 1. placer tout ce qu'il y a plus haut 2. à faire qu'en 
+%mode recto verso la page suivante soit à droite {superbe}
+}
+
+%Commandes page titre après le \begin{document}:
+%\title{\LARGE{Introduction \LaTeX}}
+%\redigeur{Étudiant de physique}{}
+%\correcteur{}
+%\information{Faculté des Sciences}{Département de physique}{\today}
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.} %pour les liste a puce et autres
+
+\newcommand{\hilight}[1]{\colorbox{lightgray}{#1}} %Autre méthode de surlignage
+
+%Commande pour surligner
+%\hilight{}
+
+%Commandes permetant de référencer plus simplement les figures et équation
+\newcommand{\figref}[1]{figure (\ref{#1})}		%Figure
+\renewcommand{\eqref}[1]{équation (\ref{#1})}		%Équation
+
+\newcounter{pythoncode}	%Créer un nouveau compteur pour les blocs de pythoncode 
+%(ajouter [section] pour permettre de reset le compteur à toutes les sections
+
+\newtcblisting{pythoncode}[2][]{			%Permet de placer du code dans le texte pis que ce sois beau
+	phantom={\stepcounter{pythoncode}},				%"phantom" execute un segmant de code. "\stepcounter" permet d'incrémenter le compteur
+	enhanced,							%Permet de faire des choses plus cool
+	breakable,
+	title={Code \thepythoncode\hspace{20 mm}\textit{#2} },				%Le titre sera "Code " suivi du compteur suivi du paramètre passé
+	colframe=blue!50!black, 					%Le comptour sera de cette couleur (bleu foncé)
+	colback=blue!10!white, 						%Le derière sera de cette couleur (bleu pale)
+	fonttitle=\ttfamily,						%La police d'écriture
+	coltitle=white,							%Couleur du titre (blanc)
+	%boxed title style={size=small, colback=blue!75!black},
+	width=\linewidth,						%La longueur de la boite est de la longueur de la ligne
+	left=6mm,							%espacement entre le bord et les numéro de ligne (6mm)
+	listing only,
+	drop shadow,							%met de l'ombre derrière la boîte
+	listing options={						%Instructions transmises au truc qui place les lignes de codes
+		language=Python,					%Language de programation
+		basicstyle=\ttfamily\footnotesize,			%Le style de l'écriture (petit carachtère)
+		numbers =left,						%Afficher des numéros de lignes à gauche
+		numberstyle=\color{gris},				%Couleur des numéros de ligne
+		commentstyle=\color{VertCommantaire},			%Couleur des commantaires python
+		inputencoding=utf8,					%Encodage utilisé
+		keywordstyle=\color{blue},
+		%identifierstyle=\color{orange},
+		showspaces=false,              				% show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+		showstringspaces=false,       				% underline spaces within strings only
+		showtabs=false,               				% show tabs within strings adding particular underscores
+		stringstyle=\color{MauveChaine},
+		escapechar=|,},						%Pour entré du code LaTeX entrer le caractère "|"
+	}
+
+\end{verbatim}
+
+\subsection{Code du fichier \textit{Article.tex} d'un article que j'ai écris}
+
+\begin{verbatim}
+    
+\documentclass[twoside,letterpaper,11pt]{article}
+\usepackage{ark}
+\usepackage{biblio}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[C]{} 
+\fancyhead[L]{} 
+\fancyhead[R]{}
+
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\thepage} 
+\fancyfoot[L]{}  %Marque automatiquement la sous-section qui commence la page
+\fancyfoot[R]{} %Imprime le titre de la section qui commence la page et \thesection 
+%Marque le numéros de la section actuel
+
+%Pour faire un titre de document centré
+\def\headline#1{\hbox to \hsize{\hrulefill\quad\lower.3em\hbox{#1}\quad\hrulefill}}
+
+%Pour faire des lignes horizontale centré sur le texte (fancy)
+\newcommand*{\longueurligne}[1]{\def\LongueurLigne{#1 cm}}
+
+\newcommand*{\titretravail}[1]{\def\TITRE{#1}}
+\newcommand\ligneH{
+\hbox to \hsize{\rule{\LongueurLigne}{.05em}\quad\lower.3em\hbox{\TITRE}\quad\hrulefill} 
+%Permet de faire des lignes tronqué au centre
+}
+
+\usetikzlibrary{calligraphy}
+\usepackage{multicol}
+
+\usepackage{lipsum} 
+
+\titleformat*{\section}{\normalsize \bfseries}
+\titleformat*{\subsection}{\normalsize\bfseries }
+\titleformat*{\subsubsection}{\normalsize \bfseries}
+\titlespacing*{\section}{0.4pt}{0.5\baselineskip}{0.5\baselineskip}
+\def\thesection{\Roman{section}}
+\def\thesubsection{\roman{subsection}}
+
+\newcommand{\legend}[1]{
+    \captionsetup{font={footnotesize}}
+    \caption*{#1}
+}
+
+\let\sub\textsubscript
+
+
+\setlength{\columnsep}{0.55cm}
+
+\usepackage{etoolbox}
+\appto\UrlBreaks{\do\-}
+
+\begin{document}
+
+\redacteur{Olivier Bernard}{}{06 août 2018}
+\coteCours{PHQ 560}
+\nodev{Soudure laser, onde de choc et angioplastie}
+\entete
+
+
+\begin{center} 
+    \begin{minipage}{15.5cm}
+    Pour traiter les occlusions totales chronique (OTC),  SoundBite$^{TM}$ Medical développe un appareil générant des ondes de choc, la console, et un fil guide transportant ces ondes, nommé \textit{Active Wire}$^{TM}$. Dans l'enrichissement de cette technologie, la compagnie développe la méthode de soudure des composantes du fil à l'aide d'une soudeuse laser.
+    \end{minipage}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{multicols}{2}
+
+\justifying
+
+\section{Introduction}
+
+Avant l'avènement de l'angioplastie en 1977, le traitement de la coronaropathie (DAC) 
+et de maladies artérielles périphériques (DAP), causées par des occlusions totales 
+chroniques (OTC) ou de la sténose artérielle, était fait au moyen d'un pontage. Une 
+chirurgie à la fois complexe et rude pour le corps humain. L'angioplastie, 
+quant à elle, est dite "percutanée"$^{\ref{WIKI}}$. C'est-à-dire qu'elle peut être
+réalisée sans abord chirurgical et par la simple ponction à l'aiguille du 
+vaisseau. Toutefois, malgré cette avancé technologique, il n’existe pas de
+solutions ou de produits efficaces pour traverser les OTC, dont plus de 300 000
+personnes par an, au États-Unis seulement, sont atteintes$^{\ref{SBM}}$. 
+
+SoundBite$^{TM}$ Medical développe une technologie permettant de traverser et de traiter 
+efficacement les OTC sans avoir recours à une chirurgie intrusive ou l'utilisation de 
+médicaments. Cette technologie réussie cette tâche à l'aide d'ondes de choc 
+envoyées dans un fil assemblé a l'aide d'une soudeuse laser.
+
+\section{Concepts clefs}
+
+\input{Code/SB.tex}
+
+\section{Et le laser?}
+
+\input{Code/Laser.tex}
+
+%\section{Caractérisation de l'appareil}
+
+\section{Conclusion}
+
+En bref, SoundBite$^{TM}$ Medical a sut combiner plusieurs technologies et savoirs pour 
+produire une nouvelle technologie facilitant les traitements des occlusions totales 
+chroniques (OTC) chez les patients atteint de coronaropathie (DAC) et de
+maladie artérielle périphérique (DAP). 
+
+
+\section*{Bibliographie}
+
+\input{Code/biblio.tex}
+
+\end{multicols}
+\end{document}
+
+\end{verbatim}
 
 \end{document}
 
