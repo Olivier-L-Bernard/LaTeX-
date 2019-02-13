@@ -9,9 +9,9 @@
 %\fancyfoot[C]{\thepage} 
 
 % Custom section fonts
-\usepackage{sectsty}
-\sectionfont{\rmfamily\mdseries\scshape\Large}
-\subsectionfont{\rmfamily\mdseries\itshape\large}
+% \usepackage{sectsty}
+% \sectionfont{\rmfamily\mdseries\scshape\Large}
+% \subsectionfont{\rmfamily\mdseries\itshape\large}
 % Other possible font commands include:
 % \ttfamily for teletype,
 % \sffamily for sans serif,
@@ -23,13 +23,12 @@
 \begin{document}
 
 \begin{center}
-{\LARGE \textbf{Nom complet}}\\ 
-\Telefon \, Téléphone : (XXX) XXX-XXXX\\ 
-\Mobilefone \, Cellulaire : (XXX) XXX - XXXX\\
-%\Letter \, Courriel : olivier.l.bernard@usherbrooke.ca\\ 
-\Letter \, Courriel : adresse@couriel.com\\
-XXX Nom Rue, \\ 
-Ville, Qc , XXX XXX\\
+{\LARGE \textbf{Olivier Bernard}}\\ 
+\Telefon \, Téléphone : (819) 847-2822\\ 
+\Mobilefone \, Cellulaire : (819) 640 - 8381\\
+\Letter \, Courriel : olivierlaurierbernard@gmail.com\\
+140 Chemin Alphonse, \\ 
+Orford, Qc , J1X 7M2\\
 \end{center}
 
 \bigbreak
@@ -40,14 +39,15 @@ Ville, Qc , XXX XXX\\
 
 \section*{Éducation}
 
+
 \begin{itemize}[label={}]
 
-\item \textbf{Baccalauréat en XXXXXXX} (régime coopératif) \hfill Date fin ou en cours\\
+\item \textbf{Baccalauréat en physique} (régime coopératif) \hfill 2019\\
 Université de Sherbrooke  \\
 
 \vspace{0.2cm}
 
-\item \textbf{Diplôme d'études collégiales} \hfill  Date fin \\
+\item \textbf{Diplôme d'études collégiales} \hfill  2015 \\
 Techniques de \textbf{Génie Mécanique} (option Conception) \\
 Cégep de Sherbrooke\\
 \end{itemize}
@@ -56,20 +56,20 @@ Cégep de Sherbrooke\\
 
 \begin{itemize}[label={}]
 
-\item \textbf{Stagiaire  en XXX} \hfill  Date début-fin ou mois + année\\
-Qui, Ville \\
-(Quoi sujet)
+\item \textbf{Stagiaire  en R\&D} \hfill  Automne 2017\\
+SoundBite Medical, Montréal \hfill Été 2018\\
+(Entreprise de recherche dans le domaine médical)
 %\vspace{1mm}
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
-    \item Lancement et gestion d'un nouveau projet de  développement \\ d'expertise à l'interne. 
-    \item Transférer les connaissances et l'expertise sous  forme \\ d'entraînement et formation
+    \item Lancement et gestion d'un nouveau projet de  recherche et \\ de développement  d'expertise à l'interne. 
+    \item Concevoir, planifier et éxécuter des études de prototypes \\ ainsi   que faire l'analyse des données
     \item Recevoir, installer, qualifier un appareil et utiliser  une \\ machine laser
-    \item Rédiger des instructions, des protocoles, des  manipulations \\ et des rapports en lien avec le laser
+    \item Rédiger des instructions, des protocoles, des  manipulations \\ et des rapports en lien avec le projet laser
 \end{itemize}
 
-\item \textbf{Stagiaire  en XXX} \hfill  Date début-fin ou mois + année\\
-Qui, Ville \\
-(Quoi sujet)
+\item \textbf{Stagiaire concepteur en R\&D} \hfill   Hiver 2017\\
+PPD Meditech, Waterville \\
+(Entreprise de production de composantes médicales)
 %\vspace{1mm}
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
     \item Concevoir, faire des calculs, faire des analyses de résultats,\\  modéliser des composantes  et systèmes de divers projets 
@@ -78,13 +78,16 @@ Qui, Ville \\
     \item Communiquer avec les clients afin de mieux définir leurs exigences
 \end{itemize}
 
-\item \textbf{Stagiaire  en XXX} \hfill  Date début-fin ou mois + année\\
-Qui, Ville \\
-(Quoi sujet)
+\item \textbf{Technologue en génie Mécanique} \hfill  2014 - 2015\\
+Verbom, Valcourt  \\
+(Entreprise de production de système poinçon matrices)
+%\vspace{1mm}
+
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
     \item Participer au développement de projets à l’interne
     \item Procéder à l’inventaire des machines et rédaction\\ des fiches de cadenassage
     \item Monter des systèmes de poinçons matrice
+    \item Maintenance des machines
 \end{itemize}
 \end{itemize}
 
@@ -92,8 +95,8 @@ Qui, Ville \\
 
 \begin{itemize}[label={}]
 
-\item \textbf{Langues:} Français (xxx), Anglais (xx/5), Allemand (xxx)
-\item \textbf{Outils de conception/simulation:} exemple, exemple, exemple
+\item \textbf{Langues:} Français (langue maternelle), Anglais (4.5/5), Allemand (En apprentissage)
+\item \textbf{Outils de conception/simulation:} Solidworks, Inventor, SolidEdge et AutoCad
 \item \textbf{Outils de rédaction/d'analyse:} \LaTeX , Word, OriginLab et Excel
 \item \textbf{Programmation:} Python , Ladder et Labview
 
@@ -101,7 +104,7 @@ Qui, Ville \\
 
 \section*{Projets}
 
-\subsection*{Quoi le projet - projet personnel}
+\subsection*{Conception et fabrication d’un ornithoptère grandeur nature - projet personnel}
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
     \item Concevoir et simuler le système sur ordinateur
     \item Analyser les simulations sur ordinateur du système sous différentes conditions 
@@ -110,7 +113,7 @@ Qui, Ville \\
     \item Organiser une équipe de développement
 \end{itemize}
 
-\subsection*{Quoi le projet - projet collégiale \\ Groupe Anderson, Chesterville}
+\subsection*{Conception et fabrication d'un gabarit de soudage modulaire - projet collégial \\ Groupe Anderson, Chesterville}
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
     \item Concevoir le système sur ordinateur
     \item Effectuer les calculs pour le projet et analyser les résultats
@@ -118,13 +121,15 @@ Qui, Ville \\
     \item Étude et définition des besoins du client
 \end{itemize}
 
+
+
 \section*{Implications}
 
 \bigbreak
 
 \begin{itemize}[label={}]
-\item \textbf{Exemple 1} \hfill année - année\\
-Où \hfill \\
+\item \textbf{Entraîneur Rugby} \hfill 2014 - 2016\\
+École secondaire Le Triolet \hfill \\
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
     \item Préparer et animer les pratiques en exerçant une discipline rigoureuse
     \item Démontrer un bon esprit d’équipe ainsi que de créativité
@@ -132,8 +137,8 @@ Où \hfill \\
 
 \bigbreak 
 
-\item \textbf{Quoi} \hfill année\\
-Où \\
+\item \textbf{Entraidant} \hfill 2012\\
+École secondaire Le Triolet \\
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
     \item Être à l’écoute des élèves
     \item Prévenir les problématiques
@@ -147,9 +152,9 @@ Où \\
 \smallbreak
 
 \begin{itemize}[label=\textbullet, font=  \scriptsize]
-    \item Apprendre de nouvelles choses
-    \item Développement dans  les domaines reliés à la science technologique, médicale et physique 
-    \item Conception de machines, mécanismes, etc.
+    \item Développement dans  les domaines reliés à la science technologique et la physique  
+    \item Apprendre de nouvelles connaissances dans le domaine des sciences humaines 
+    \item Sports d'équipe et sports individuel
 \end{itemize}
 
 %\section*{Références}
