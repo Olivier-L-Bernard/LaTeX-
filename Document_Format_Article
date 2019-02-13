@@ -1,0 +1,61 @@
+\documentclass[twoside,letterpaper,11pt]{article}
+
+\usepackage{biblio}
+
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[C]{} 
+\fancyhead[L]{} 
+%\fancyhead[R]{\CoteDuCours}
+
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{} 
+\fancyfoot[L]{}  %Marque automatiquement la sous-section qui commence la page
+\fancyfoot[R]{} %Imprime le titre de la section qui commence la page et \thesection %Marque le numéros de la section actuel
+
+\begin{document}
+
+\redacteur{NOM 1}{NOM 2}{JJ/MM/AAAA}
+\coteCours{CODE COURS}
+%\titreDuCours{NOM DU COURS}
+\nodev{NOM LABO}
+\entete
+\begin{center} 
+\begin{minipage}{15cm}
+    \lipsum[1]
+    \end{minipage}
+\end{center}
+
+\vspace{0.5cm}
+
+\begin{multicols}{2}
+
+\justify
+
+\section*{Introduction}
+La supraconductivité est un phénomène qui est visible lorsque la température du milieu est à basse température
+
+\section*{Théorie}
+
+Succeptibilité donné par $\chi = M/H$ Parler de la théorie BCS et limites (?) Parler de la théorie des champs moyens (Gineburg-Landeau avec $\xi= lg \quad coherence \quad et \quad \lambda = lg \, penetration$) Parler des trucs critique comme champ (pourquoi il y en a 2) et courant.  Parler que supra $\chi = -1$ parler de l'exposant dans la théorie des champs moyen, de $J_{c}(0),T_{c},\rho_{0}$ Parler du nombre de bobine et de l'état du matériel. S'il y a une bobine vs 1 et si le matériel est supra vs pas supra. Parler des relations avec la températures (et température critique), de la susceptibilité et de la résistivité (?). Parler principe de mesure (?). Parler de l'effet Mesner (?).
+
+\section*{Manipulations}
+
+Parler de l'appareil (?) et des manipulations. Parler structure et comment machine fonctionne. Parler grosses lignes des manipulations de l'appareil. 
+
+\section*{Résultats et analyse}
+
+\section*{Conclusion}
+
+
+\lipsum[1-20]
+
+\section*{Bibliographie}
+
+\bibliographystyle{ieeetr}
+\bibliography{64ref}
+
+\end{multicols}
+
+\end{document}
