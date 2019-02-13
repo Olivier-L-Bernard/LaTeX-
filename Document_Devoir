@@ -1,0 +1,30 @@
+\documentclass[twoside,letterpaper,11pt]{article}
+
+\usepackage{biblio}
+
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyhead[C]{Devoir \NoDev: \LeTitreDuCours} 
+\fancyhead[L]{ U de S} 
+\fancyhead[R]{\CoteDuCours}
+
+\renewcommand{\footrulewidth}{0.5pt}
+\fancyfoot[C]{\textbf{\thepage}} 
+\fancyfoot[L]{\rightmark}  %Marque automatiquement la sous-section qui commence la page
+\fancyfoot[R]{\leftmark} %Imprime le titre de la section qui commence la page et \thesection %Marque le numéros de la section actuel
+
+
+\begin{document}
+
+\redacteur{Nom 1}{Nom 2}{AA/MM/JJ}
+\coteCours{CODE DU COURS}
+\titreDuCours{NOM DU COURS}
+\doc{Devoir}
+\nodev{NO  DEV}
+\entete
+
+
+\clearpage 
+k
+\end{document}
