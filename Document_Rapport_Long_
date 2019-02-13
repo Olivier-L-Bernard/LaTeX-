@@ -1,0 +1,70 @@
+\documentclass[twoside,letterpaper,12pt]{article}
+\usepackage{biblio}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{} 
+\fancyhead[L]{} 
+\fancyhead[C]{} 
+
+\renewcommand{\footrulewidth}{0.1pt}
+\fancyfoot[LO]{\thepage}
+\fancyfoot[LE]{Équipe }
+\fancyfoot[RE]{\thepage} 
+\fancyfoot[RO]{Équipe }
+\fancyfoot[C]{\LABO} 
+
+\begin{document}
+
+
+\titre  {Présenté à}
+\sousTitre {RESPONSABLE}
+\titreDuCours{COURS}
+\coteDuCours{PHQ660}
+\auteurs{NOM 1 \\ NOM 2}
+\labo{LABORATOIRE}
+\date{\today} 
+
+\pageTitre%Place la page titre
+
+\pagestyle{fancy}
+
+%\clearpage
+\pagenumbering{roman}
+\tableofcontents
+
+\clearpage
+
+\pagenumbering{arabic}
+
+\section{1}
+
+\clearpage
+
+\section{Montage expérimentale}
+
+\clearpage
+
+\section{Présentation et analyse des résultats}
+
+\clearpage
+
+\section{Conclusion}
+
+lol\cite{proto}
+
+\clearpage
+
+\pagenumbering{Roman}
+
+\section{Annexe}
+
+\clearpage
+
+\subsection{Références}
+
+\bibliographystyle{ieeetr}
+
+\bibliography{64ref}
+
+\end{document}
