@@ -1,0 +1,75 @@
+\documentclass[twoside,letterpaper,12pt]{article}
+\usepackage{biblio}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{} 
+\fancyhead[L]{} 
+\fancyhead[C]{} 
+
+\renewcommand{\footrulewidth}{0.1pt}
+\fancyfoot[LO]{\thepage}
+\fancyfoot[LE]{Équipe NO}
+\fancyfoot[RE]{\thepage} 
+\fancyfoot[RO]{Équipe NO}
+\fancyfoot[C]{EXPÉRIENCE} 
+
+
+\begin{document}
+
+\title{\LARGE{TEMPLATE DE RAPPORT}}
+\redigeur{REDIGEUR 1}{REDIGEUR 2}
+\correcteur{CORRECTEUR}
+\Cote{cote du cour}
+\NomCours{Nom du cours}
+\information{Faculté des Sciences}{Département de physique}{\today}
+
+\pageTitre
+
+\pagenumbering{roman}
+\pagestyle{fancy}
+
+\tableofcontents
+
+\clearpage
+
+\pagenumbering{arabic}
+
+\section{Introduction}
+
+\clearpage
+
+\section{Théorie}
+
+\clearpage
+
+\section{Montage expérimental} 
+
+\clearpage
+
+\section{Présentation et analyse des résultats}
+
+\clearpage
+
+\section{Conclusion}
+
+lol\cite{proto}
+
+\vspace{5mm}
+
+ \clearpage
+
+\pagenumbering{Roman}
+
+\section{Annexes}
+
+\clearpage
+
+\subsection{Références}
+
+\bibliographystyle{ieeetr}
+
+\bibliography{64ref}
+
+\end{document}
+
