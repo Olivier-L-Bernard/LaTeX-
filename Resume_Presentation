@@ -1,0 +1,67 @@
+\documentclass[twoside,letterpaper,11pt]{article}
+
+\usepackage{biblio}
+
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\fancyhead[C]{Devoir \NoDev: \LeTitreDuCours} 
+\fancyhead[L]{ U de S} 
+\fancyhead[R]{\CoteDuCours}
+
+\renewcommand{\footrulewidth}{0.5pt}
+\fancyfoot[C]{\textbf{\thepage}} 
+\fancyfoot[L]{\rightmark}  %Marque automatiquement la sous-section qui commence la page
+\fancyfoot[R]{\leftmark} %Imprime le titre de la section qui commence la page et \thesection %Marque le numéros de la section actuel
+
+
+\begin{document}
+
+\redacteur{N1 \\ N2}{N3}{2019/05/09}
+\coteCours{PHQ112}
+\titreDuCours{Notions de géologie et d'astronomie}
+\doc{Résumé: détection des exoplanètes}
+\nodev{}
+\entete
+%\vspace{-10mm}
+
+\begin{enumerate}[label=\Alph*)]
+    \item Mentions au 16$^{\text{ième}}$ siècle et devient sujet de recherche dès le 19$^{\text{ième}}$
+    \item Méthodes de détections:
+    \begin{enumerate}[label=\alph*)]
+        \item Transit (diminution de l'intensité) (plus de détection $\sim$ 100 par an)
+        \item Vitesse radiale (effet Doppler) (seconde plus de détections environs 50 par an)
+        \item Lentille gravitationnelle
+        \item Imagerie directe
+        \item Astrométrie
+        \item Variation du moment du transit
+    \end{enumerate}
+    \item 3929 exoplanète détectées et 3402 en cours de confirmation et ce autour de 2927 étoiles (détection maximum à 400 a.l.).
+    \item Deux types de planètes:
+    \begin{enumerate}[label=\alph*)]
+            \item Gazeuse:
+            \begin{enumerate}
+                \item Jovienne, composé d'hydrogème et hélium, 2 à 3 fois la taille de Jupiter (super Jupiter) et environ 1214 détectés
+                \item Neptunienne, composés de méthane et d'eau, environ la taille de Neptune et environ 1666 détectés
+            \end{enumerate}
+            \item Rocheuse:
+            \begin{enumerate}
+                \item Taille de la terre environs 156 trouvés
+                \item 2 fois la taille de la terre (super terre) environ 878 trouvés
+                \item Le type le plus susceptible d'abriter de la vie.
+            \end{enumerate}
+    \end{enumerate}
+    \item Planètes notables:
+        \begin{enumerate}[label=\alph*)]
+                \item Proxima B (vitesse Radiale) environ 4 a.l. 
+                \item Trappist-1 (7 planètes - Transit) au moins 3 susceptibles d'abriter la vie et à environ 39 a.l.
+                \item LHS 1140b (Transit et Vitesse Radiale) Son étoile est une Naine rouge et est à environ 40 a.l.
+                \item Wolf 503b (transit) deux fois plus grande que la terre et est à 145 a.l. de la terre
+                \item Kepler 452b (Transit) diamètre de 60\% de la terre et à une distance de 1400 a.l.
+        \end{enumerate}
+\end{enumerate}
+
+Hors programme:  \url{https://exoplanets.nasa.gov/}  \\ 
+et enfin \url{https://www.hughosborn.co.uk/category/exoplanet-detection/}
+
+\end{document}
