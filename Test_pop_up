@@ -1,0 +1,20 @@
+\documentclass[twoside,letterpaper,12pt]{article}
+\usepackage{biblio}
+\usepackage{test}
+
+\begin{document}
+
+Einstein's \tooltip*{formula}{$
+    G(0,0) = g(u,v)\newline
+    G(0, \pm 1) = \mp e \left(\frac{V}{2} + \frac{U}{3} \right) + \frac{e^{2}}{6C} + g(u,v)\newline
+    G(\pm 1 , 0) = \mp e \left(\frac{V}{2} - \frac{U}{3} \right) + \frac{e^{2}}{6C} + g(u,v)
+    G(0, \pm 1) > G(0,0) \newline
+    \mp e \left(\frac{V}{2} + \frac{U}{3} \right) > -\frac{1}{6} \frac{e^{2}}{C} \newline
+    \pm \frac{CV}{2e} \pm \frac{CU}{3e} < \frac{1}{6} \newline
+    G(\pm 1, 0) > G(0 ,0) \Longrightarrow \pm \left( \frac{CV}{2e} - \frac{CU}{3e} \right) < \frac{1}{6}
+$} is well known.
+Another famous formula is due to \tooltip*{Pythagoras}{$a^2+b^2=c^2$}.
+
+This \tooltip{tip}{is visible only in AR} is draggable and shown on mouse-over.
+  
+\end{document}
