@@ -1,0 +1,38 @@
+\documentclass[twoside,letterpaper,12pt]{article}
+\usepackage{biblio}
+%\usepackage{test}
+
+\RequirePackage{xcolor}
+\RequirePackage{xifthen}
+
+\definecolor{awesome-red}{HTML}{DC3522}
+\colorlet{awesome}{awesome-red}
+
+\newcounter{colorCounter}
+\newcommand\sectioncolor[3]{%
+  {%
+    \color{%
+      \ifcase\value{colorCounter}%
+        awesome\or
+        blue\or
+        green\or
+        awesome\or
+        blue\or
+        green\else
+        awesome\fi
+    } #1#2#3%
+  }%
+  \stepcounter{colorCounter}%
+}
+
+\newcommand*{\sectionstyle}[1]{{\fontsize{15pt}{1em}\bfseries\sectioncolor #1}}
+
+\begin{document}
+    \sectionstyle{first}\par
+    \sectionstyle{second}\par
+    \sectionstyle{third}\par
+    \sectionstyle{fourth}\par
+    \sectionstyle{fifth}\par
+    \sectionstyle{sixth}\par
+    \sectionstyle{seventh}
+\end{document}
