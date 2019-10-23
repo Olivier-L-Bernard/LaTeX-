@@ -1,0 +1,13 @@
+\documentclass{article}
+\usepackage{biblio}
+
+\begin{document}
+
+\title{\LARGE{TEMPLATE DE RAPPORT}}
+\redigeur{REDACTEUR 1}{REDACTEUR 2}
+\correcteur{CORRECTEUR}
+\information{Faculté des Sciences}{Département de physique}{\today}
+
+\pageTitre
+
+\end{document}
