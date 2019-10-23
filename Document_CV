@@ -1,24 +1,6 @@
 \documentclass[twoside,letterpaper,11 pt]{article}
 \usepackage{biblio}
 
-%\pagestyle{fancy}
-%\renewcommand{\headrulewidth}{0pt}
-%\renewcommand{\footrulewidth}{0pt}
-%\fancyfoot[L]{Matricule étudiant: 15 030 119} 
-%\fancyfoot[R]{Olivier Bernard}
-%\fancyfoot[C]{\thepage} 
-
-% Custom section fonts
-% \usepackage{sectsty}
-% \sectionfont{\rmfamily\mdseries\scshape\Large}
-% \subsectionfont{\rmfamily\mdseries\itshape\large}
-% Other possible font commands include:
-% \ttfamily for teletype,
-% \sffamily for sans serif,
-% \bfseries for bold,
-% \scshape for small caps,
-% \normalsize, \large, \Large, \LARGE sizes.
-
 
 \begin{document}
 
