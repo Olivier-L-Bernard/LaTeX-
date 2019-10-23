@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{biblio}
+
+\title{EXMPLE_PAGE_TITRE_2}
+\author{olivier Bernard}
+\date{July 2017}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+
+\includegraphics[width=0.6\textwidth]{logo}\\[1cm]
+\vspace{20mm}
+{\large Département de physique}\\[0.5cm]
+
+{\large Travaux pratiques III - PHQ460}\\[0.5cm]
+
+\vspace{10mm}
+% Title
+\rule{\linewidth}{0.5mm} \\[0.4cm]
+{ \huge \bfseries Titre du rapport éventuellement en plusieurs lignes \\[0.4cm] }
+\rule{\linewidth}{0.5mm} \\[1.5cm]
+
+\vspace{20mm}
+% Author and supervisor
+\noindent
+\begin{minipage}{0.4\textwidth}
+  \begin{flushleft} \large
+    \emph{Auteurs :}\\
+    Samuel \textsc{Desrosiers}\\
+    Étienne \textsc{Massé}\\
+  \end{flushleft}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+  \begin{flushright} \large
+    \emph{Encadrant :} \\
+    Pr.~Denis \textsc{Morris}
+  \end{flushright}
+\end{minipage}
+
+\vspace{10mm}
+
+
+\vfill
+
+% Bottom of the page
+{\large  \today}
+
+\end{center}
+\end{titlepage}
+
+\end{document}
